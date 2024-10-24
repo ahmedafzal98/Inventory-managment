@@ -7,7 +7,7 @@ import LinkedInIcon from "../../assets/linkedinIcon.svg";
 import pinterestIcon from "../../assets/pinterestIcon.svg";
 import UpArrow from "../../assets/upArrow.svg";
 import PaymentCard from "../../assets/paymetCard.png";
-import "./footer.css";
+import "../footer/Footer.css";
 
 import EmailTextfield from "../emailTextfield/EmailTextfield";
 const Footer = () => {
