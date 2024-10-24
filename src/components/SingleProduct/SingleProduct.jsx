@@ -1,5 +1,5 @@
 import "../SingleProduct/SingleProduct.css";
-import Product1 from "../../images/Product1.png";
+import Product1 from "../../images/product1.png";
 import Review from "../../assets/review.svg";
 
 const SingleProduct = () => {
