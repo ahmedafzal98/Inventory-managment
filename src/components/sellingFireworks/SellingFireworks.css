@@ -1,17 +1,19 @@
-.hero-section{
-    margin-top: 5%;
+.hero-section {
+  margin-top: 5%;
 }
-.selling-fireworks{
-    width: calc(100% - 60px); 
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto; 
-    justify-content: space-evenly;
+.selling-fireworks {
+  width: calc(100% - 60px);
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  justify-content: space-evenly;
 }
-.fireworks-container{
-    display: flex;
+.fireworks-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.sale{
-    display: flex;
-    justify-content: space-evenly;
+.sale {
+  display: flex;
+  justify-content: space-evenly;
 }
