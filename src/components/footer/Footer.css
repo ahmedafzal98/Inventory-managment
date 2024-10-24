@@ -1,0 +1,179 @@
+@font-face {
+    font-family: 'Nunito-light'; /* Name your font family */
+    src: url('../../fonts/Nunito/static/Nunito-Light.ttf'); /* Locate the .ttf file within your directory*/
+  }
+ /* Footer styles */
+ .footer {
+    background-image: url('../../images/footer.png');
+    background-size: cover; /* Ensures the entire image is shown without cutting */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents repeating */
+    width: 100%;
+    height: 570px; /* Fixed height for the footer */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* Prevents overflow */
+}
+
+
+/* Footer menu */
+.footer-menu {
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+    margin: auto;
+}
+
+/* Signup section */
+.signup-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 5%;
+    margin-top: 20px;
+}
+
+.signup {
+    overflow: hidden;
+    display: flex;
+    color: #fff;
+    margin-right: 13%;
+    height: auto;
+}
+
+.signup-offer {
+    display: flex;
+    flex-direction: column;
+}
+
+.signup-heading {
+    font-family: 'Nunito';
+    font-size: 24px;
+}
+
+.signup-detail {
+    margin-top: 20px;
+    display: flex;
+    font-family: 'Nunito-light';
+    font-size: 14px;
+}
+
+.vr {
+    height: 100%;
+    width: 1px;
+    margin-left: 20px;
+    background-color: #fff;
+}
+
+/* Footer content layout */
+.footer-container {
+    width: 100%;
+    display: flex;
+    margin-top: 10%;
+    flex-direction: column;
+}
+
+.footer-logo-section {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 300px;
+}
+
+.footer-container .footer-logo span {
+    font-size: 30px;
+}
+
+.query, .address, .mobile {
+    color: #fff;
+    line-height: 1.8;
+}
+
+.address, .mobile {
+    display: flex;
+}
+
+.address span, .mobile span {
+    margin-left: 10px;
+}
+
+.socialIcons {
+    display: flex;
+}
+
+.round-circle {
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 38px;
+    height: 38px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+.up-arrow{
+    position: absolute;
+    margin-left: 70%;
+    margin-top: 30px;
+}
+
+/* Footer details */
+.footer-details {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.footer-corporate, .customer-service, .footer-products {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+.footer-corporate li, .customer-service li, .footer-products li {
+    margin-top: 15px;
+    font-size: 15px;
+    font-family: 'Nunito-light';
+}
+
+/* Footer bottom */
+.footer-bottom {
+    height: auto;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 9%;
+    align-items: center;
+    width: 100%;
+}
+
+.hr {
+    height: 1px;
+    margin-top: 10px;
+    background-color: #3B3C3E;
+    width: 100%;
+}
+
+.footer-bottom-content {
+    width: 70%;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.footer-bottom .designer {
+    width: 50%;
+    color: #fff;
+    font-family: 'Nunito-light';
+    font-size: 12px;
+}
+
+.footer-bottom .payment-cards {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}

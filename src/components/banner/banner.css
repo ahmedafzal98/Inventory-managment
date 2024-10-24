@@ -1,0 +1,18 @@
+.banner {
+    background-image: url('../../images/mainBanner.png'); /* Your banner image path */
+    background-size: cover; /* Ensure the image covers the entire banner */
+    background-position: top center; /* Aligns the image to the top center */
+    background-repeat: no-repeat; /* Prevents image tiling */
+    width: 100vw; /* Full viewport width */
+    height: 110vh; /* Set height dynamically, subtracting the header height */
+    box-shadow: 
+    -20px 30px 30px rgba(63, 217, 255, 0.3), /* Light shadow from bottom left */
+    20px 30px 30px rgba(183, 0, 255, 0.3); /* Light shadow from bottom right */
+    display: flex; /* Centers content */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    position: relative; /* Allows for positioning child elements if needed */
+    margin: 0; /* Resets any margin */
+    padding: 0; /* Resets any padding */
+    overflow: hidden; /* Hides any overflow */
+}

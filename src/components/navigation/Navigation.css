@@ -1,0 +1,50 @@
+.nav-bar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 120px; /* Ensure this height accommodates all content */
+    overflow: hidden;
+    background-color: #ECFBFF;
+}
+
+.nav-container {
+    width: 100%;
+    height: 31px;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 10%;
+    height: auto;
+    margin-left: 10%;
+}
+
+.logo span {
+    font-size: 18px;
+    font-family: 'Nunito';
+    color: #060606;
+}
+
+.nav-items {
+    font-size: 18px;
+    font-family: 'Nunito';
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+    margin-left: 8%;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 5px; 
+    width: 40%;
+    justify-content: flex-end;
+    margin-right: 40px; 
+}
+
+.nav-icons img {
+    width: 18px;
+    height: 18px;
+    margin: 5px;
+}

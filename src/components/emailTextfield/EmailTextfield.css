@@ -1,0 +1,38 @@
+.email-textfield {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 30px;
+    margin: 20px;
+    width: 400px;
+    position: relative;  /* This helps position the button inside the textfield */
+}
+
+.email-textfield input {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    border-style: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.email-textfield button{
+    width: 80px;
+    height: 35px;
+    margin-right: 40px;
+    border-radius: 30px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #B700FF;
+}
+
+
+
+.email-textfield input:focus {
+    border-color: #B700FF; /* Border color change when focused */
+}

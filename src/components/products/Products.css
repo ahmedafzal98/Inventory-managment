@@ -1,0 +1,8 @@
+.products{
+    margin: 40px;
+
+    
+}
+.products-container{
+    display: flex;
+}
