@@ -18,13 +18,13 @@ const Navigation = () => {
           <span>LOGO HERE</span>
         </div>
         <div className="nav-items">
-          {menuItems.map((item) => {
-            return <span>{item}</span>;
+          {menuItems.map((item, index) => {
+            return <span key={index}>{item}</span>;
           })}
         </div>
         <div className="nav-icons">
-          <img src={SearchIcon} alt="Search Icon" srcset="" />
-          <img src={CartBadgeIcon} alt="Cart Badge Icon" srcset="" />
+          <img src={SearchIcon} alt="Search Icon" srcSet="" />
+          <img src={CartBadgeIcon} alt="Cart Badge Icon" srcSet="" />
         </div>
       </div>
     </nav>

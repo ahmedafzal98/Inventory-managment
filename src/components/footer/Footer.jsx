@@ -39,28 +39,28 @@ const Footer = () => {
               </span>
             </div>
             <div className="address">
-              <img src={AddressIcon} alt="Address Icon" srcset="" />
+              <img src={AddressIcon} alt="Address Icon" srcSet="" />
               <span>Address</span>
             </div>
             <div className="mobile">
-              <img src={MobileIcon} alt="MobileIcon" srcset="" />
+              <img src={MobileIcon} alt="MobileIcon" srcSet="" />
               <span>(+1)-000-000-0000</span>
             </div>
             <div className="socialIcons">
               <div className="round-circle">
-                <img src={TwitterIcon} alt="Twitter Icon" srcset="" />
+                <img src={TwitterIcon} alt="Twitter Icon" srcSet="" />
               </div>
               <div className="round-circle">
-                <img src={InstaIcon} alt="Insta Icon" srcset="" />
+                <img src={InstaIcon} alt="Insta Icon" srcSet="" />
               </div>
               <div className="round-circle">
-                <img src={FacebookIcon} alt="Facebook Icon" srcset="" />
+                <img src={FacebookIcon} alt="Facebook Icon" srcSet="" />
               </div>
               <div className="round-circle">
-                <img src={LinkedInIcon} alt="LinkedIn Icon" srcset="" />
+                <img src={LinkedInIcon} alt="LinkedIn Icon" srcSet="" />
               </div>
               <div className="round-circle">
-                <img src={pinterestIcon} alt="Pinterest Icon" srcset="" />
+                <img src={pinterestIcon} alt="Pinterest Icon" srcSet="" />
               </div>
             </div>
           </div>
@@ -106,7 +106,7 @@ const Footer = () => {
             </div>
             <div className="up-arrow">
               <div className="round-circle">
-                <img src={UpArrow} alt="Up Arrow" srcset="" />
+                <img src={UpArrow} alt="Up Arrow" srcSet="" />
               </div>
             </div>
           </div>
@@ -116,7 +116,7 @@ const Footer = () => {
           <div className="footer-bottom-content">
             <div className="designer">DESIGN & DEVELOP BY: FZHP © 2024</div>
             <div className="payment-cards">
-              <img src={PaymentCard} alt="Payment Card" srcset="" />
+              <img src={PaymentCard} alt="Payment Card" srcSet="" />
             </div>
           </div>
         </div>

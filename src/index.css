@@ -1,7 +1,10 @@
 @font-face {
-    font-family: 'Nunito'; /* Name your font family */
-    src: url('../../fonts/Nunito/static/Nunito-Bold.ttf'); /* Locate the .ttf file within your directory*/
+  font-family: 'Nunito';
+    src: url('./fonts/Nunito/static/Nunito-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
   }
+
 *{
     margin: 0;
     padding: 0;

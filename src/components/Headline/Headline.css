@@ -1,7 +1,4 @@
-@font-face {
-    font-family: 'Nunito'; /* Name your font family */
-    src: url('../../fonts/Nunito/static/Nunito-Bold.ttf'); /* Locate the .ttf file within your directory*/
-  }
+
 .headline{
     text-align: center;
     font-family: 'Nunito';

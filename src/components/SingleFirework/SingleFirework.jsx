@@ -4,7 +4,7 @@ const SingleFirework = () => {
   return (
     <div className="fireworks">
       <div className="fireworks-img">
-        <img src={Bursting} alt="Bursting" srcset="" />
+        <img src={Bursting} alt="Bursting" srcSet="" />
       </div>
 
       <div className="firework-span">

@@ -6,7 +6,7 @@ const EmailTextfield = () => {
       <input type="email" placeholder="Your email address" />
       <div className="button">
         <button>
-          <img src={MailIcon} alt="Mail Icon" srcset="" />
+          <img src={MailIcon} alt="Mail Icon" srcSet="" />
         </button>
       </div>
     </div>
