@@ -3,7 +3,7 @@ import MobileIcon from "../../assets/mobileIcon.svg";
 import TwitterIcon from "../../assets/twitterIcon.svg";
 import FacebookIcon from "../../assets/facebookIcon.svg";
 import InstaIcon from "../../assets/instaIcon.svg";
-import LinkedInIcon from "../../assets/linkedInIcon.svg";
+import LinkedInIcon from "../../assets/linkedinIcon.svg";
 import pinterestIcon from "../../assets/pinterestIcon.svg";
 import UpArrow from "../../assets/upArrow.svg";
 import PaymentCard from "../../assets/paymetCard.png";
