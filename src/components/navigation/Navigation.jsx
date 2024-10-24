@@ -1,6 +1,6 @@
 import "../navigation/Navigation.css";
 import SearchIcon from "../../assets/search-Icon.svg";
-import CartBadgeIcon from "../../assets/cart-badge-Icon.svg";
+import CartBadgeIcon from "../../assets/cart-badge-icon.svg";
 const Navigation = () => {
   const menuItems = [
     "Home",
