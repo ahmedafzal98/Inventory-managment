@@ -1,0 +1,43 @@
+@font-face {
+    font-family: 'Nunito-light';
+        src: url('../../fonts/Nunito/static/Nunito-Light.ttf');
+  }
+
+.firework_bg{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 535px;
+    background-image: url("../../images/firework-bg.png");
+    background-size: cover;
+    background-position: center; 
+    
+}
+.purple-bg{
+    height: 274px;
+    width: 80%;
+}
+
+.spark{
+    position: absolute;
+    right:25%;
+}
+.text-overlay {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    color: white; /* Adjust color for visibility */
+    font-size: 63px; /* Adjust size as needed */
+
+  }
+  .text-overlay .para-text{
+    font-size: 17px;
+    font-family: 'Nunito-light';
+    margin-top: 20px;
+  }

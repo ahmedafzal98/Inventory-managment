@@ -16,3 +16,8 @@
     padding: 0; /* Resets any padding */
     overflow: hidden; /* Hides any overflow */
 }
+.banner .shopnow-btn{
+    position: absolute;
+    left: 10%;
+    top: 57%;
+}
