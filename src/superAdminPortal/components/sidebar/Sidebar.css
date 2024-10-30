@@ -1,0 +1,32 @@
+@font-face {
+  font-family: "Inter-thin";
+  src: url("../../../fonts/Inter/static/Inter_18pt-Thin.ttf")
+    format("truetype");
+}
+.sidebar {
+width: 20%;
+display: flex;
+flex-direction: column;
+height: 100vh;
+align-items: center;
+overflow: hidden;
+}
+.admin{
+width: 60% ;
+display: flex;
+flex-direction: column;
+}
+.admin span{
+  font-size: 30px;
+  font-weight: bold;
+  color: #000;
+  font-family: "Inter-thin";
+  margin-left: 10px;
+}
+.hr {
+  opacity: 50%;
+background-color: #ea8dfd;
+width: 200px;
+height: 1px;
+margin: 10px;
+}

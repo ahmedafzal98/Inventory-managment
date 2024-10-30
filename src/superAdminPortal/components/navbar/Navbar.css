@@ -1,0 +1,109 @@
+@font-face {
+  font-family: "Inter";
+  src: url("../../../fonts/Inter/static/Inter_24pt-SemiBold.ttf")
+    format("truetype");
+}
+@font-face {
+  font-family: "Inter-regular";
+  src: url("../../../fonts/Inter/static/Inter_18pt-Regular.ttf")
+    format("truetype");
+}
+.navbar {
+  /* height: 103px; */
+  display: flex;
+  justify-content: center;
+}
+.navbar-container {
+    height: 150px;
+  display: flex;
+  align-items: center;
+  /* justify-content: flex-end; */
+  width: 100%;
+}
+.navbar-content {
+    justify-content: flex-end;
+    width: 100%;
+    display: flex;;
+}
+.navbar-title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: auto;
+}
+.navbar-title-logo{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.navbar-title-logo img{
+    margin-right: 70px;
+    margin-top: 40px;
+}
+.right-part{
+    float: right;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 53%;
+}
+.search-box {
+    display: flex;
+    border-radius: 40px;
+    position: relative;
+}
+.search-box input {
+    border: 1px solid #878C90;
+    font-size: 20px;
+    font-family: 'Inter', sans-serif; /* Make sure the font is correctly defined */
+    padding-left: 20px;
+    padding-right: 50px; /* Add padding to the right to prevent text overlap with the icon */
+    width: 325px;
+    height: 50px;
+    border-radius: 40px; /* Match the border-radius with the container */
+    outline: none; /* Remove the default outline */
+    transition: border-color 0.2s; /* Optional for smooth transition */
+}
+.search-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #EA8DFD;
+    position: absolute;
+    right: 10px; /* Adjusted position to fit better */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Center vertically */
+    cursor: pointer;
+    height: 27px;
+    width: 27px;
+    border: none; /* Ensure no border around the icon */
+}
+.search-box input:focus {
+    border-color: #878C90; /* Keep the same border color on focus */
+}
+
+.social-icons{
+    width: 250px;
+    justify-content: space-evenly;
+    display: flex;
+}
+.social-icons img{
+    height: 27px;
+    width: 27px;
+    cursor: pointer;
+}
+.search-icon img{
+    height: 19px;
+    width: 18px;
+}
+.vr{
+    width: 1px;
+    height: 50px;
+    background-color: #878C90;
+}
+span {
+  font-family: "Inter";
+  font-size: 30px;
+}

@@ -1,0 +1,26 @@
+.menu {
+  margin-top: 20px;
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  margin-left: 20%;
+  height: 60%;
+}
+.menu-item {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  cursor: pointer;
+}
+.menu-item span {
+  color: #878c90;
+  font-size: 25px;
+  font-family: "Inter-regular";
+  margin-left: 30px;
+}
+.menu-item img {
+  height: 25px;
+  width: 25px;
+}

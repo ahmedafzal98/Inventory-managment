@@ -1,0 +1,31 @@
+.charts{
+    height: 75%;
+    width: 95%;
+    margin: auto;
+    display: flex;
+    margin-top: 30px;
+    align-items: center;
+    justify-content: space-around;
+}
+.revenue-chart{
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05),  /* Bottom shadow */
+    0 -4px 15px rgba(0, 0, 0, 0.05), /* Top shadow */
+    4px 0 15px rgba(0, 0, 0, 0.05),  /* Right shadow */
+    -4px 0 15px rgba(0, 0, 0, 0.05); /* Left shadow */
+    transition: transform 0.3s; /* Optional: Add a transition for hover effect */
+    width: 62%;
+    height: 90%;
+}
+
+.stock-chart{
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1), /* Bottom shadow */
+    0 -4px 15px rgba(0, 0, 0, 0.1), /* Top shadow */
+    4px 0 15px rgba(0, 0, 0, 0.1), /* Right shadow */
+    -4px 0 15px rgba(0, 0, 0, 0.1); /* Left shadow */
+    transition: transform 0.3s; /* Optional: Add a transition for hover effect */
+    width: 30%;
+    height: 90%;
+}

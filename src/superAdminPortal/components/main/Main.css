@@ -1,0 +1,100 @@
+@font-face {
+  font-family: "Inter";
+  src: url("../../../fonts/Inter/static/Inter_24pt-SemiBold.ttf")
+    format("truetype");
+}
+@font-face {
+  font-family: "Inter-regular";
+  src: url("../../../fonts/Inter/static/Inter_18pt-Regular.ttf")
+    format("truetype");
+}
+.dashboard {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  background-color: #fdf3ff;
+}
+.card-container {
+  
+  display: flex;
+  flex-wrap: nowrap;
+  margin-top: 50px;
+  width: 95%;
+  align-items: center;
+
+  justify-content: flex-start;
+  overflow: hidden;
+  height: 20%;
+}
+.card {
+    border-radius: 15px;
+    background-color: #fff;
+    height: 100%;
+    margin: 20px;
+    width: 70%;
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05),  /* Bottom shadow */
+    0 -4px 15px rgba(0, 0, 0, 0.05), /* Top shadow */
+    4px 0 15px rgba(0, 0, 0, 0.05),  /* Right shadow */
+    -4px 0 15px rgba(0, 0, 0, 0.05); /* Left shadow */
+  
+    transition: transform 0.3s; /* Optional: Add a transition for hover effect */
+}
+.card:hover {
+    transform: translateY(-5px); /* Optional: Elevate on hover for interactivity */
+}
+.card-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  line-height: 1.5;
+}
+.card-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+.card-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+  border-radius: 20%;
+  background-color: #ea8dfd;
+  height: 70px;
+  width: 70px;
+}
+.card-title span {
+  font-size: 18px;
+  font-family: "Inter-regular";
+}
+.card-price span {
+  font-size: 36px;
+  color: #000;
+  font-family: "Inter";
+}
+.card-bottom {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    background-color: #ea8dfd; /* Original background color */
+    transition: background-color 0.3s; /* Smooth transition for the hover effect */
+}
+
+.card-bottom:hover {
+    background-color: #d77cfa; /* Lighter shade for hover effect */
+}
+.card-bottom span {
+  color: white;
+  font-size: 16px;
+  font-family: "Inter";
+}
