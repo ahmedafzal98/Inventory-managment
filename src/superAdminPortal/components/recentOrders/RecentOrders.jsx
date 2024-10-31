@@ -66,7 +66,6 @@ const RecentOrders = () => {
               return <span>{info}</span>;
             })}
         </div>
-        <div className="line"></div>
 
         <div className="order-detail">
           {orderDetails &&
@@ -86,7 +85,6 @@ const RecentOrders = () => {
                     <span>{detail.city}</span>
                     <span>{detail.status}</span>
                   </div>
-
                   <div className="line"></div>
                 </>
               );

@@ -13,39 +13,38 @@
   align-items: center;
   flex-direction: column;
   width: 100%;
-  background-color: #fdf3ff;
 }
 .card-container {
-  
   display: flex;
   flex-wrap: nowrap;
   margin-top: 50px;
   width: 95%;
   align-items: center;
-
+  margin-bottom: 30px;
   justify-content: flex-start;
   overflow: hidden;
-  height: 20%;
+  height: 25%;
 }
 .card {
-    border-radius: 15px;
-    background-color: #fff;
-    height: 100%;
-    margin: 20px;
-    width: 70%;
-    display: flex;
-    cursor: pointer;
-    flex-direction: column;
-    justify-content: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05),  /* Bottom shadow */
-    0 -4px 15px rgba(0, 0, 0, 0.05), /* Top shadow */
-    4px 0 15px rgba(0, 0, 0, 0.05),  /* Right shadow */
-    -4px 0 15px rgba(0, 0, 0, 0.05); /* Left shadow */
+  border-radius: 15px;
+  background-color: #fff;
+  height: 100%;
+  margin: 20px;
+  width: 70%;
+  display: flex;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
   
-    transition: transform 0.3s; /* Optional: Add a transition for hover effect */
+  /* General shadow */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  
+  transition: transform 0.3s, box-shadow 0.3s; /* Transition for hover effect */
 }
+
 .card:hover {
-    transform: translateY(-5px); /* Optional: Elevate on hover for interactivity */
+  transform: translateY(-5px); /* Elevate on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
 }
 .card-detail {
   display: flex;
@@ -67,7 +66,7 @@
   align-items: center;
   margin-right: 20px;
   border-radius: 20%;
-  background-color: #ea8dfd;
+  background-color: #2E6BAE;
   height: 70px;
   width: 70px;
 }
@@ -81,18 +80,25 @@
   font-family: "Inter";
 }
 .card-bottom {
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 70px;
-    background-color: #ea8dfd; /* Original background color */
-    transition: background-color 0.3s; /* Smooth transition for the hover effect */
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  background-color: #2e6bae; /* Original background color */
+  transition: background-color 0.3s; /* Smooth transition for the hover effect */
+  z-index: 1; /* Ensure it appears above the card */
 }
 
 .card-bottom:hover {
-    background-color: #d77cfa; /* Lighter shade for hover effect */
+  background-color: #2b5b8a; /* Darker color on hover */
 }
+
+/* To ensure the bottom shadow is visible */
+.card:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+}
+
 .card-bottom span {
   color: white;
   font-size: 16px;

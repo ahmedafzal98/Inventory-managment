@@ -3,7 +3,9 @@ import searchIcon from "../../../assets/search-Icon-white.svg";
 import mailIcon from "../../../assets/mail-Icon.svg";
 import notificationIcon from "../../../assets/notification-Icon.svg";
 import infoIcon from "../../../assets/info-Icon.svg";
-import logo from "../../../assets/logo.png";
+import logo from "../../../assets/logo.svg";
+import Title from "../portalTitle/Title";
+import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <nav className="navbar">
@@ -12,7 +14,7 @@ const Navbar = () => {
           <div className="navbar-title">
             <div className="navbar-title-logo">
               <img src={logo} alt="" srcSet="" />
-              <span>Dashboard</span>
+              <Title title="Dashboard" />
             </div>
           </div>
           <div className="right-part">
@@ -29,7 +31,9 @@ const Navbar = () => {
             </div>
             <div className="vr">a</div>
             <div className="logo">
-              <img src={logo} alt="Logo" srcset="" />
+              <Link to="/login">
+                <img src={logo} alt="Logo" />
+              </Link>
             </div>
           </div>
         </div>

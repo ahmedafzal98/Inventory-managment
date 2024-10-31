@@ -1,18 +1,22 @@
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import Product from "./Pages/Product";
-import Dashboard from "./superAdminPortal/Pages/Dashboard/Dasboard";
+import { BrowserRouter as Router, useLocation } from "react-router-dom";
+import AuthRoutes from "./superAdminPortal/authRoutes/Login";
+import MainRoute from "./superAdminPortal/mainRoutes/MainRoute";
 
-function App() {
+const App = () => {
+  const location = useLocation();
+
+  const isAuthPage =
+    location.pathname === "/login" || location.pathname === "/signup";
+
+  return isAuthPage ? <AuthRoutes /> : <MainRoute />;
+};
+
+const MainApp = () => {
   return (
     <Router>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/products" element={<Product />} />
-        </Routes>
-      </div>
+      <App />
     </Router>
   );
-}
+};
 
-export default App;
+export default MainApp;

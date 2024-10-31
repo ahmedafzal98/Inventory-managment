@@ -5,7 +5,7 @@ import inventory from "../../../assets/inventory-white-icon.png";
 import Chart from "../charts/Chart";
 import RecentOrders from "../recentOrders/RecentOrders";
 
-const Main = () => {
+const Dashboard = () => {
   const info = [
     { title: "Reparation", src: cart, price: 550 },
     { title: "Client", src: sales, price: 220 },
@@ -43,4 +43,4 @@ const Main = () => {
     </main>
   );
 };
-export default Main;
+export default Dashboard;

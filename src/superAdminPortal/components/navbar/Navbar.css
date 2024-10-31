@@ -70,14 +70,14 @@
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    background-color: #EA8DFD;
+    background-color: #2E6BAE;
     position: absolute;
     right: 10px; /* Adjusted position to fit better */
     top: 50%; /* Center vertically */
     transform: translateY(-50%); /* Center vertically */
     cursor: pointer;
-    height: 27px;
-    width: 27px;
+    height: 30px;
+    width: 30px;
     border: none; /* Ensure no border around the icon */
 }
 .search-box input:focus {

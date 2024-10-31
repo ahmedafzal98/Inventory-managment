@@ -1,0 +1,80 @@
+@font-face {
+  font-family: "Inter-regular";
+  src: url("../../../fonts/Inter/static/Inter_18pt-Regular.ttf")
+    format("truetype");
+}
+.add-product {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-radius: 15px;
+}
+.add-product-container {
+  width: 95%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05),
+    /* Bottom shadow */ 0 -4px 15px rgba(0, 0, 0, 0.05),
+    /* Top shadow */ 4px 0 15px rgba(0, 0, 0, 0.05),
+    /* Right shadow */ -4px 0 15px rgba(0, 0, 0, 0.05); /* Left shadow */
+  background-color: #fff;
+  margin-top: 3%;
+  border-radius: 14px;
+  margin-bottom: 20px;
+}
+.form{
+    width: 90%;
+}
+.group{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.input-Text {
+    margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+}
+.input-Text span{
+    color: #000;
+    font-family: 'Inter-regular';
+    font-size: 23px;
+
+}
+.textfield input {
+    
+    margin-top: 10px;
+  width: 600px;
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid #d9d9d9;
+}
+.rich-input-Text input{
+    max-width: 100%;
+    height: 225px;
+}
+.group2{
+    margin-top: 40px;
+}
+.group2 input{
+    width: 100%;
+    height: 226px;
+}
+button {
+    cursor: pointer;
+    height: 50px;
+    margin-top: 20px;
+    width: 7%;
+    background-color: #1773D9; /* Original background color */
+    border-radius: 5px;
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+button:hover {
+    background-color: #155a8a; /* Darker shade for hover effect */
+}
+

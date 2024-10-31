@@ -1,0 +1,14 @@
+/* styles.css */
+.app-container {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+  }
+  
+  .main-content {
+    
+  background-color: #2E6BAE;
+    display: flex;
+    flex-grow: 1; /* Fill the remaining space */
+    overflow-y: auto; /* Allow scrolling if content overflows */
+  }
+  

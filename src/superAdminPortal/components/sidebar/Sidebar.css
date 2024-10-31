@@ -4,6 +4,7 @@
     format("truetype");
 }
 .sidebar {
+  background-color: #fff;
 width: 20%;
 display: flex;
 flex-direction: column;
@@ -25,7 +26,7 @@ flex-direction: column;
 }
 .hr {
   opacity: 50%;
-background-color: #ea8dfd;
+background-color: #2E6BAE;
 width: 200px;
 height: 1px;
 margin: 10px;

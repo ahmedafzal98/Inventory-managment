@@ -4,11 +4,14 @@
     margin: auto;
     display: flex;
     margin-top: 30px;
+    
     align-items: center;
     justify-content: space-around;
 }
 .revenue-chart{
+    background-color: #fff;
     border-radius: 15px;
+    overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05),  /* Bottom shadow */
     0 -4px 15px rgba(0, 0, 0, 0.05), /* Top shadow */
     4px 0 15px rgba(0, 0, 0, 0.05),  /* Right shadow */
@@ -19,6 +22,7 @@
 }
 
 .stock-chart{
+    background-color: #fff;
     overflow: hidden;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1), /* Bottom shadow */
