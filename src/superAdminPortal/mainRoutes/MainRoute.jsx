@@ -7,9 +7,9 @@ import EditRemoveProduct from "../components/editRemoveProduct/EditRemoveProduct
 import Price from "../components/price/price";
 import "../../App.css";
 import Dashboard from "../components/main/Main";
-import Login from "../components/login/login";
 import ProductManagment from "../productManagment/ProductManagment";
 import OrderManagment from "../components/orderManagment/OrderManagment";
+import Login from "../components/login/Login";
 
 const MainRoute = () => {
   return (
