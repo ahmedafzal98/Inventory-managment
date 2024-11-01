@@ -1,38 +1,77 @@
-import { Route, Router, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Navbar from "../components/navbar/Navbar";
 import Sidebar from "../components/sidebar/Sidebar";
 import ViewStock from "../components/viewStock/ViewStock";
 import AddProduct from "../components/addProduct/AddProduct";
 import EditRemoveProduct from "../components/editRemoveProduct/EditRemoveProduct";
-import Price from "../components/price/price";
+import Price from "../components/price/Price";
 import "../../App.css";
 import Dashboard from "../components/main/Main";
-import ProductManagment from "../productManagment/ProductManagment";
-import OrderManagment from "../components/orderManagment/OrderManagment";
+import OrderManagement from "../components/orderManagment/OrderManagment";
 import Login from "../components/login/Login";
+import { useEffect, useState } from "react";
+import ProductManagment from "../components/productManagment/ProductManagment";
 
 const MainRoute = () => {
+  const [navText, setNavText] = useState("Dashboard"); // Default navbar text
+  const location = useLocation(); // To get current path
+
+  // Function to set navbar text based on current route
+  const updateNavText = () => {
+    switch (location.pathname) {
+      case "/":
+        setNavText("Dashboard");
+        break;
+      case "/inventory/view-stock":
+        setNavText("View Stock");
+        break;
+      case "/inventory/addProduct":
+        setNavText("Add Product");
+        break;
+      case "/inventory/productManagement":
+        setNavText("Product Management");
+        break;
+      case "/inventory/orderManagement":
+        setNavText("Order Management");
+        break;
+      case "/inventory/edit-remove":
+        setNavText("Edit/Remove Product");
+        break;
+      case "/inventory/price":
+        setNavText("Price Management");
+        break;
+      case "/login":
+        setNavText("Login");
+        break;
+      default:
+        setNavText("Dashboard");
+        break;
+    }
+  };
+
+  // Update navbar text whenever the route changes
+  useEffect(() => {
+    updateNavText();
+  }, [location.pathname]);
+
   return (
     <>
-      <Navbar />
+      <Navbar navText={navText} />
       <div className="main-content">
         <Sidebar />
-
         <Routes>
           <Route path="/login" element={<Login />} />
-          {/* <Route path="/signup" element={<Signup />} /> */}
           <Route path="/" element={<Dashboard />} />
           <Route path="/inventory/view-stock" element={<ViewStock />} />
           <Route path="/inventory/addProduct" element={<AddProduct />} />
           <Route
-            path="/inventory/productManagment"
+            path="/inventory/productManagement"
             element={<ProductManagment />}
           />
           <Route
-            path="/inventory/orderManagment"
-            element={<OrderManagment />}
+            path="/inventory/orderManagement"
+            element={<OrderManagement />}
           />
-
           <Route
             path="/inventory/edit-remove"
             element={<EditRemoveProduct />}
@@ -43,4 +82,5 @@ const MainRoute = () => {
     </>
   );
 };
+
 export default MainRoute;

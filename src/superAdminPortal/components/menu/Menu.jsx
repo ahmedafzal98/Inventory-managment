@@ -25,8 +25,8 @@ const Menu = () => {
       subInventory: [
         { title: "View Stock", path: "/inventory/view-stock" },
         { title: "Add Product", path: "/inventory/addProduct" },
-        { title: "Product Managment", path: "/inventory/productManagment" },
-        { title: "Order Managment", path: "/inventory/orderManagment" },
+        { title: "Product Managment", path: "/inventory/productManagement" },
+        { title: "Order Managment", path: "/inventory/orderManagement" },
         { title: "Remove / Edit", path: "/inventory/edit-remove" },
         { title: "Price", path: "/inventory/price" },
         { title: "Product", path: "/inventory/product" },

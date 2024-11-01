@@ -6,7 +6,7 @@ import infoIcon from "../../../assets/info-Icon.svg";
 import logo from "../../../assets/logo.svg";
 import Title from "../portalTitle/Title";
 import { Link } from "react-router-dom";
-const Navbar = () => {
+const Navbar = ({ navText }) => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -14,7 +14,7 @@ const Navbar = () => {
           <div className="navbar-title">
             <div className="navbar-title-logo">
               <img src={logo} alt="" srcSet="" />
-              <Title title="Dashboard" />
+              <Title title={navText} />
             </div>
           </div>
           <div className="right-part">

@@ -1,7 +1,7 @@
-import "../components/viewStock/ViewStock.css";
+import "../viewStock/ViewStock.css";
 import "./ProductManagment.css";
 
-import product from "../../images/bursting.png";
+import product from "../../../images/bursting.png";
 
 import { useEffect, useState } from "react";
 import { Add, Check, Delete, Edit } from "@mui/icons-material";
