@@ -4,7 +4,7 @@ import Sidebar from "../components/sidebar/Sidebar";
 import ViewStock from "../components/viewStock/ViewStock";
 import AddProduct from "../components/addProduct/AddProduct";
 import EditRemoveProduct from "../components/editRemoveProduct/EditRemoveProduct";
-import Price from "../components/price/Price";
+import Price from "../components/price/price";
 import "../../App.css";
 import Dashboard from "../components/main/Main";
 import OrderManagement from "../components/orderManagment/OrderManagment";
