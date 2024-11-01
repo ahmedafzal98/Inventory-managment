@@ -1,6 +1,6 @@
 // AuthRoutes.js
 import { Routes, Route } from "react-router-dom";
-import Login from "../components/login/login";
+import Login from "../components/login/Login";
 import Signup from "../components/signup/Signup";
 
 const AuthRoutes = () => {
