@@ -11,7 +11,7 @@ import {
   InputAdornment,
   InputLabel,
 } from "@mui/material";
-import { AccountCircle } from "@mui/icons-material";
+import { AccountCircle, LockRounded, PersonAddAlt1 } from "@mui/icons-material";
 const Login = () => {
   return (
     <div className="login">
@@ -30,15 +30,16 @@ const Login = () => {
             >
               <InputLabel
                 htmlFor="input-with-icon-adornment"
-                sx={{ fontSize: "1.2rem" }}
+                sx={{ fontSize: 15, fontWeight: 400 }}
               >
                 Username
               </InputLabel>
               <Input
                 id="input-with-icon-adornment"
+                placeholder="Type Your Username"
                 startAdornment={
                   <InputAdornment position="start">
-                    <AccountCircle fontSize="large" />
+                    <PersonAddAlt1 fontSize="large" />
                   </InputAdornment>
                 }
                 sx={{
@@ -50,15 +51,16 @@ const Login = () => {
             <FormControl variant="standard" sx={{ width: "80%", mb: 2 }}>
               <InputLabel
                 htmlFor="input-with-icon-adornment"
-                sx={{ fontSize: "1.2rem" }}
+                sx={{ fontSize: 15, fontWeight: 400 }}
               >
                 Password
               </InputLabel>
               <Input
                 id="input-with-icon-adornment"
+                placeholder="Type Your Password"
                 startAdornment={
                   <InputAdornment position="start">
-                    <AccountCircle fontSize="large" />
+                    <LockRounded fontSize="large" />
                   </InputAdornment>
                 }
                 sx={{
@@ -83,7 +85,9 @@ const Login = () => {
                 <span>Forget Password</span>
               </div>
 
-              <button className="login-btn">SIGNIN</button>
+              <div className="loginBtn">
+                <button className="login-btn">SIGNIN</button>
+              </div>
               <span
                 style={{
                   fontSize: 15,

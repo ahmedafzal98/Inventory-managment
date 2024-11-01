@@ -19,12 +19,12 @@
     z-index: 1; /* Place it above the background but below the content */
   }
   .login-container{
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   .login-logo {
-    
     display: flex;
     justify-content: center; /* Center the logo */
     align-items: center; /* Vertically center the logo */
@@ -50,6 +50,7 @@
     width: 545px;
     height: 90vh;
     /* margin-bottom: 20PX; */
+    overflow: visible;
     color: white;
     position: relative; /* Needed to keep content above the overlay */
     z-index: 2; /* Ensure the content is above the overlay */
@@ -59,9 +60,12 @@
     align-items: center;
     flex-direction: column;
     background-color: #fff;
-    border-radius: 30px 20px 10px 5px; /* Top-left, Top-right, Bottom-right, Bottom-left */
-    height: 100%;
-  }
+    border-radius: 30px; /* Ensure this is applied to all corners */
+    border: none; /* Remove any borders that might cause issues */
+    height: 70%;
+    overflow: hidden; /* Optional: control overflow, but ensure child elements don't interfere */
+}
+
   .remeber{
     margin-top: 40px;
     display: flex;
@@ -73,10 +77,14 @@
     cursor: pointer;
     font-size: 15px;
   }
-  .login-btn{
-    height: 47px;
+  .loginBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 442px; */
+  }
+  .loginBtn .login-btn{
     border-radius: 20px;
-    width: 100%;
     background-color: #2E6BAE;
   }
   .socialIcons{
