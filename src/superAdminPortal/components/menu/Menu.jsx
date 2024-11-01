@@ -17,7 +17,7 @@ const Menu = () => {
   const location = useLocation(); // Hook to get the current location
 
   const menu = [
-    { title: "Dashboard", src: home, path: "/dashboard" },
+    { title: "Dashboard", src: home, path: "/" },
     {
       title: "Inventory Qty",
       src: reports,
