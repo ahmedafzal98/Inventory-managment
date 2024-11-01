@@ -1,80 +1,121 @@
 @font-face {
   font-family: "Inter-regular";
-  src: url("../../../fonts/Inter/static/Inter_18pt-Regular.ttf")
-    format("truetype");
+  src: url("../../../fonts/Inter/static/Inter_18pt-Regular.ttf") format("truetype");
 }
+
 .add-product {
   width: 100%;
   display: flex;
   justify-content: center;
   border-radius: 15px;
 }
+
 .add-product-container {
-  width: 95%;
-  height: 80%;
+  width: 90%; /* Set the width to 905px */
+  height: auto; /* Allow height to adapt based on content */
   display: flex;
   flex-direction: column;
   align-items: center;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05),
-    /* Bottom shadow */ 0 -4px 15px rgba(0, 0, 0, 0.05),
-    /* Top shadow */ 4px 0 15px rgba(0, 0, 0, 0.05),
-    /* Right shadow */ -4px 0 15px rgba(0, 0, 0, 0.05); /* Left shadow */
+    0 -4px 15px rgba(0, 0, 0, 0.05),
+    4px 0 15px rgba(0, 0, 0, 0.05),
+    -4px 0 15px rgba(0, 0, 0, 0.05);
   background-color: #fff;
-  margin-top: 3%;
+  margin: 3% auto; /* Center with automatic left/right margins */
   border-radius: 14px;
-  margin-bottom: 20px;
+  padding: 20px; /* Add padding for better spacing */
 }
-.form{
-    width: 90%;
-}
-.group{
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-}
-.input-Text {
-    margin-top: 40px;
-  display: flex;
-  flex-direction: column;
-}
-.input-Text span{
-    color: #000;
-    font-family: 'Inter-regular';
-    font-size: 23px;
 
+
+.form {
+  width: 100%; /* Set to 100% for better responsiveness */
 }
+
+.group {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap in smaller screens */
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 20px; /* Add space between groups */
+}
+
+.input-Text {
+  margin-top: 20px; /* Space above each input */
+  margin-right: 20px; /* Add space to the right of each input */
+  flex: 1 1 30%; /* Flex item to take up space evenly */
+}
+.input-Text:last-child {
+  margin-right: 0; /* Remove margin for the last item in each row */
+}
+.input-Text span {
+  color: #000;
+  font-family: 'Inter-regular';
+  font-size: 20px; /* Slightly smaller font for better fit */
+}
+
 .textfield input {
-    
-    margin-top: 10px;
-  width: 600px;
+  margin-top: 10px;
+  width: 100%; /* Make input take full width of its container */
   height: 50px;
   border-radius: 10px;
   border: 1px solid #d9d9d9;
+  box-sizing: border-box; /* Ensure padding and border are included in width */
 }
-.rich-input-Text input{
-    max-width: 100%;
-    height: 225px;
+
+.rich-input-Text input {
+  max-width: 100%;
+  height: 225px;
 }
-.group2{
-    margin-top: 40px;
+
+.group3{
+  width: 32%;
 }
-.group2 input{
-    width: 100%;
-    height: 226px;
+.group2 {
+  margin-top: 20px; /* Reduced margin for better spacing */
 }
+
+.group2 input {
+  width: 100%;
+  height: 226px;
+}
+
 button {
-    cursor: pointer;
-    height: 50px;
-    margin-top: 20px;
-    width: 7%;
-    background-color: #1773D9; /* Original background color */
-    border-radius: 5px;
-    color: #fff;
-    border: none;
-    transition: background-color 0.3s; /* Smooth transition for hover effect */
+  cursor: pointer;
+  height: 50px;
+  margin-top: 20px;
+  width: 30%; /* Make the button take more width */
+  max-width: 200px; /* Set a max width for the button */
+  background-color: #1773D9; /* Original background color */
+  border-radius: 5px;
+  color: #fff;
+  border: none;
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
 }
 
 button:hover {
-    background-color: #155a8a; /* Darker shade for hover effect */
+  background-color: #155a8a; /* Darker shade for hover effect */
 }
 
+/* Media Queries for Responsiveness */
+@media (max-width: 600px) {
+  .input-Text {
+    flex: 1 1 100%; /* Stack inputs on smaller screens */
+    margin-top: 10px; /* Adjust margin for smaller screens */
+  }
+
+  .group {
+    justify-content: center; /* Center groups for smaller screens */
+  }
+
+  button {
+    width: 100%; /* Make button full width on small screens */
+  }
+
+  .input-Text span {
+    font-size: 18px; /* Reduce font size on small screens */
+  }
+
+  .add-product-container {
+    padding: 10px; /* Adjust padding on smaller screens */
+  }
+}

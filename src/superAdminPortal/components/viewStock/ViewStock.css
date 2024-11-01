@@ -4,7 +4,7 @@
   /* align-items: center; */
   height: auto;
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 5%;
 }
 .stock-card {
   border-radius: 15px;
@@ -19,22 +19,29 @@
   background-color: #fff;
 }
 .stock-info {
-  font-size: 20px;
-  color: #9499a1;
+
   display: flex;
   margin-top: 30px;
   justify-content: space-evenly;
+}
+.stock-info span{
+  font-size: 20px;
+  color: #9499a1;
 }
 .stock-items {
   color: #9499a1;
-  font-size: 19px;
   height: 50px;
   margin-top: 30px;
   display: flex;
-  padding: 20px;
+  /* padding: 20px; */
   justify-content: space-evenly;
   align-items: center;
 }
+.stock-items span{
+  
+  font-size: 19px;
+}
+
 .status {
   display: flex;
   justify-content: center;
@@ -58,6 +65,6 @@
   color: #11b981;
 }
 .status span {
-  font-size: 22px;
+  font-size: 19px;
 }
 

@@ -1,109 +1,108 @@
-import "./ViewStock.css";
+import "../viewStock/ViewStock.css";
 
 import product from "../../../images/bursting.png";
-
-import Pagination from "../pagination/pagination.jsx";
-const ViewStock = () => {
+import SelectMenu from "../selectMenu/SelectMenu";
+const OrderManagment = () => {
   const orderInfo = [
     "IMAGE",
     "ITEM",
-    "PRODUCT ID",
+    "PAYMENT",
     "DATE",
     "PRICE",
-    "CUSTOMER",
+    "STATUS",
     "QTY",
     "CITY",
-    "STATUS",
+    "ACTION",
   ];
 
   const orderDetails = [
     {
       image: product,
       name: "Smart Phone",
-      prod_id: 4827,
+      payment: "Cash",
       date: "Apr 9 , 2023",
       price: "$1200",
+      status: "Ready",
       customName: "Fig Nelson",
       qty: 1,
       city: "New York",
-      status: "In Stock",
     },
     {
       image: product,
       name: "Smart Phone",
-      prod_id: 4827,
+      payment: "Cash",
       date: "Apr 9 , 2023",
       price: "$1200",
+      status: "Ready",
       customName: "Fig Nelson",
       qty: 1,
       city: "New York",
-      status: "Out Stock",
     },
     {
       image: product,
       name: "Smart Phone",
-      prod_id: 4827,
+      payment: "Cash",
       date: "Apr 9 , 2023",
-      qty: 1,
       price: "$1200",
+      status: "Ready",
       customName: "Fig Nelson",
+      qty: 1,
       city: "New York",
-      status: "Low Stock",
     },
     {
       image: product,
       name: "Smart Phone",
-      prod_id: 4827,
-      qty: 1,
+      payment: "Cash",
       date: "Apr 9 , 2023",
       price: "$1200",
+      status: "Ready",
       customName: "Fig Nelson",
+      qty: 1,
       city: "New York",
-      status: "In Stock",
     },
     {
       image: product,
       name: "Smart Phone",
-      prod_id: 4827,
+      payment: "Cash",
       date: "Apr 9 , 2023",
       price: "$1200",
+      status: "Ready",
       customName: "Fig Nelson",
       qty: 1,
       city: "New York",
-      status: "In Stock",
     },
     {
       image: product,
       name: "Smart Phone",
-      prod_id: 4827,
+      payment: "Cash",
       date: "Apr 9 , 2023",
       price: "$1200",
+      status: "Ready",
       customName: "Fig Nelson",
       qty: 1,
       city: "New York",
-      status: "In Stock",
     },
     {
       image: product,
       name: "Smart Phone",
-      prod_id: 4827,
+      payment: "Cash",
       date: "Apr 9 , 2023",
-      qty: 1,
       price: "$1200",
+      status: "Ready",
       customName: "Fig Nelson",
+      qty: 1,
       city: "New York",
-      status: "In Stock",
     },
     {
       image: product,
       name: "Smart Phone",
-      prod_id: 4827,
-      qty: 1,
+      payment: "Cash",
       date: "Apr 9 , 2023",
       price: "$1200",
+      status: "Ready",
       customName: "Fig Nelson",
+      qty: 1,
       city: "New York",
-      status: "In Stock",
     },
   ];
   return (
@@ -126,25 +125,14 @@ const ViewStock = () => {
                       <img src={detail.image} alt="" srcset="" />
                     </div>
                     <span style={{ color: "#3D475C" }}>{detail.name}</span>
-                    <span>{detail.prod_id}</span>
+                    {/* <span>{detail.name}</span> */}
+                    <span>{detail.payment}</span>
                     <span>{detail.date}</span>
                     <span>{detail.price}</span>
-                    <span>{detail.customName}</span>
+                    <span>{detail.status}</span>
                     <span>{detail.qty}</span>
                     <span>{detail.city}</span>
-                    <div
-                      className={`status ${
-                        detail.status === "In Stock"
-                          ? "in-stock"
-                          : detail.status === "Out Stock"
-                          ? "empty-stock"
-                          : detail.status === "Low Stock"
-                          ? "low-stock"
-                          : ""
-                      }`}
-                    >
-                      <span>{detail.status}</span>
-                    </div>
+                    <SelectMenu />
                   </div>
 
                   <div className="line"></div>
@@ -152,9 +140,8 @@ const ViewStock = () => {
               );
             })}
         </div>
-        <Pagination rows={orderDetails.length} />
       </div>
     </div>
   );
 };
-export default ViewStock;
+export default OrderManagment;

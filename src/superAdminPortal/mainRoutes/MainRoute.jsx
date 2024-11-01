@@ -8,6 +8,8 @@ import Price from "../components/price/price";
 import "../../App.css";
 import Dashboard from "../components/main/Main";
 import Login from "../components/login/login";
+import ProductManagment from "../productManagment/ProductManagment";
+import OrderManagment from "../components/orderManagment/OrderManagment";
 
 const MainRoute = () => {
   return (
@@ -22,6 +24,15 @@ const MainRoute = () => {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/inventory/view-stock" element={<ViewStock />} />
           <Route path="/inventory/addProduct" element={<AddProduct />} />
+          <Route
+            path="/inventory/productManagment"
+            element={<ProductManagment />}
+          />
+          <Route
+            path="/inventory/orderManagment"
+            element={<OrderManagment />}
+          />
+
           <Route
             path="/inventory/edit-remove"
             element={<EditRemoveProduct />}
