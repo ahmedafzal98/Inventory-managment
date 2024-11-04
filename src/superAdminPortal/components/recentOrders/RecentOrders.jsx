@@ -1,13 +1,15 @@
 import "./RecentOrder.css";
 import product from "../../../images/bursting.png";
+import Table from "../table/Table";
 const RecentOrders = () => {
   const orderInfo = [
-    "ITEM",
+    "IMAGE",
+    "PRODUCTITEM",
     "PRODUCT ID",
     "DATE",
     "PRICE",
-    "CUSTOMER",
-    "QTY",
+    "CUSTOMER NAME",
+    "QUANTITY",
     "CITY",
     "STATUS",
   ];
@@ -56,41 +58,10 @@ const RecentOrders = () => {
   ];
   return (
     <section className="orders">
-      <div className="order-container">
-        <div className="heading">
-          <span>Last Orders</span>
-        </div>
-        <div className="orderInfo">
-          {orderInfo &&
-            orderInfo.map((info) => {
-              return <span>{info}</span>;
-            })}
-        </div>
-
-        <div className="order-detail">
-          {orderDetails &&
-            orderDetails.map((detail) => {
-              return (
-                <>
-                  <div className="order-items">
-                    <div className="product-img">
-                      <img src={product} alt="" srcset="" />
-                    </div>
-                    <span>{detail.name}</span>
-                    <span>{detail.prod_id}</span>
-                    <span>{detail.date}</span>
-                    <span>{detail.price}</span>
-                    <span>{detail.customName}</span>
-                    <span>{detail.qty}</span>
-                    <span>{detail.city}</span>
-                    <span>{detail.status}</span>
-                  </div>
-                  <div className="line"></div>
-                </>
-              );
-            })}
-        </div>
+      <div className="heading">
+        <span>Last Orders</span>
       </div>
+      <Table />
     </section>
   );
 };

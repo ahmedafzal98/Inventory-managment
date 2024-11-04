@@ -37,34 +37,5 @@
   justify-content: space-evenly;
   align-items: center;
 }
-.stock-items span{
-  
-  font-size: 19px;
-}
 
-.status {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 11px;
-  border: none;
-  width: 150px;
-  height: 40px;
-}
-.low-stock {
-  background-color: #fff1d4;
-  color: #ffbb2a;
-}
-.empty-stock {
-  background-color: #f9d2da;
-  color: #E11D48;
-}
-
-.in-stock {
-  background-color: #cff1e6;
-  color: #11b981;
-}
-.status span {
-  font-size: 19px;
-}
 

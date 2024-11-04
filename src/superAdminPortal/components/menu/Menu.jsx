@@ -19,19 +19,13 @@ const Menu = () => {
   const menu = [
     { title: "Dashboard", src: home, path: "/" },
     {
-      title: "Inventory Qty",
+      title: "Inventory",
       src: reports,
       path: "/inventory/view-stock",
       subInventory: [
-        { title: "View Stock", path: "/inventory/view-stock" },
         { title: "Add Product", path: "/inventory/addProduct" },
         { title: "Product Managment", path: "/inventory/productManagement" },
         { title: "Order Managment", path: "/inventory/orderManagement" },
-        { title: "Remove / Edit", path: "/inventory/edit-remove" },
-        { title: "Price", path: "/inventory/price" },
-        { title: "Product", path: "/inventory/product" },
-        { title: "In/Out", path: "/inventory/in-out" },
-        { title: "Account", path: "/inventory/account" },
       ],
     },
     { title: "Orders / Invoice", src: orders, path: "/orders" },
@@ -49,7 +43,7 @@ const Menu = () => {
   ];
 
   const handleMenuClick = (item) => {
-    if (item.title === "Inventory Qty") {
+    if (item.title === "Inventory") {
       setShowSubMenu((prev) => !prev); // Toggle submenu
     } else {
       setShowSubMenu(false); // Close submenu for other items
@@ -80,7 +74,7 @@ const Menu = () => {
               {item.title}
             </span>
           </Link>
-          {item.title === "Inventory Qty" && showSubMenu && (
+          {item.title === "Inventory" && showSubMenu && (
             <ul className={`submenu ${showSubMenu ? "show" : ""}`}>
               {item.subInventory.map((subItem, subIndex) => (
                 <li key={subIndex}>

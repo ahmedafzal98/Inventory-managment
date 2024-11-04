@@ -1,0 +1,56 @@
+.orderManagment-items span{
+    
+    font-size: 14px;
+    color: #9499A1;
+}
+
+.orderManagment-title {
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-around;
+
+}
+.orderManagment-title span{
+    font-size: 14px;
+    color: #9499A1;
+}
+.orderManagment-title span:nth-child(1) { /* City column */
+    text-align: right;
+    width: 6%; /* Adjust width if needed */
+}
+.orderManagment-title span:nth-child(2) { /* City column */
+    text-align: center;
+    width: 12%; /* Adjust width if needed */
+}
+.orderManagment-title span:nth-child(3) { /* City column */
+    text-align: left;
+    width: 10%; /* Adjust width if needed */
+}
+.orderManagment-title span:nth-child(4) { /* City column */
+    text-align: left;
+    width: 7%; /* Adjust width if needed */
+}
+.orderManagment-title span:nth-child(5) { /* City column */
+    text-align:center;
+    width:6%; /* Adjust width if needed */
+}
+.orderManagment-title span:nth-child(6) { /* City column */
+    text-align: right;
+    width: 10%; /* Adjust width if needed */
+}
+.orderManagment-title span:nth-child(7) { /* City column */
+    text-align: center;
+    width: 7%; /* Adjust width if needed */
+}
+.orderManagment-title span:nth-child(8) { /* City column */
+    text-align: left;
+    width: 9%; /* Adjust width if needed */
+}
+.orderManagment-title span:nth-child(9) { /* City column */
+    text-align: left;
+    width: 7%; /* Adjust width if needed */
+}
+.orderManagment-title span:nth-child(10) { /* City column */
+    text-align: left;
+    width: 6%; /* Adjust width if needed */
+}

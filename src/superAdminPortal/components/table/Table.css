@@ -1,0 +1,124 @@
+.table {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.table-container {
+    margin-top: 20PX;
+    background-color: #fff;
+    width: 90%;
+    border-radius: 15px;
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+    padding: 10px;
+}
+
+
+.table-info::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in WebKit browsers (Chrome, Safari) */
+}
+
+.table-title, .table-items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.table-title span,
+.table-items span {
+    font-size: 14px;
+    color: #9499A1;
+}
+
+/* Product image styling */
+.product-img {
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-img img {
+    width: 100%;
+    height: auto;
+}
+
+/* Specific alignment adjustments */
+.table-items span:nth-child(2) { /* Price column */
+    text-align: center;
+    font-weight: 500;
+    width: 10%; /* Adjust width if needed */
+}
+.table-items span:nth-child(3) { /* Price column */
+    text-align: center;
+    width: 8%; /* Adjust width if needed */
+}
+.table-items span:nth-child(4) { /* Price column */
+    text-align: center;
+    width: 6%; /* Adjust width if needed */
+}
+
+.table-items span:nth-child(5) { 
+    text-align: left;
+    width: 8%; /* Adjust width if needed */
+}
+.table-items span:nth-child(6) { 
+    text-align: left;
+    width: 8%; /* Adjust width if needed */
+}
+
+.table-items span:nth-child(7) { 
+    text-align: center;
+    width: 5%; /* Adjust width if needed */
+}
+.table-items span:nth-child(8) { /* City column */
+    text-align: center;
+    width: 7%; /* Adjust width if needed */
+}
+
+.table-title span:nth-child(9){
+    width: 7%;
+    text-align: center;
+}
+
+
+/* Styling for data rows */
+.table-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.table-items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+.status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 11px;
+    border: none;
+    width: 100px;
+    height: 40px;
+  }
+  .low-stock {
+    background-color: #fff1d4;
+    color: #ffbb2a;
+  }
+  .empty-stock {
+    background-color: #f9d2da;
+    color: #E11D48;
+  }
+  
+  .in-stock {
+    background-color: #cff1e6;
+    color: #11b981;
+  }
+  .status span {
+    font-size: 12px;
+  }

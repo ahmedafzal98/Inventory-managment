@@ -10,7 +10,6 @@ const Sidebar = () => {
           <div className="hr"></div>
         </div>
       </div>
-
       <Menu />
     </section>
   );

@@ -11,7 +11,12 @@ import {
   InputAdornment,
   InputLabel,
 } from "@mui/material";
-import { AccountCircle } from "@mui/icons-material";
+import {
+  AccountCircle,
+  LockRounded,
+  Mail,
+  PersonAddAlt1,
+} from "@mui/icons-material";
 const Signup = () => {
   return (
     <div className="login">
@@ -21,24 +26,22 @@ const Signup = () => {
             <img src={logo} alt="Logo" srcset="" />
           </div>
           <div className="login-card">
-            <div className="heading">
-              <span>SIGNUP</span>
+            <div className="login-heading">
+              <span>SIGN UP</span>
             </div>
-            <FormControl
-              variant="standard"
-              sx={{ width: "80%", mb: 2, marginTop: "40px" }}
-            >
+            <FormControl variant="standard" sx={{ width: "80%", mb: 2 }}>
               <InputLabel
                 htmlFor="input-with-icon-adornment"
-                sx={{ fontSize: "1.2rem" }}
+                sx={{ fontSize: 15, fontWeight: 400 }}
               >
                 Email
               </InputLabel>
               <Input
                 id="input-with-icon-adornment"
+                placeholder="Type Your Email"
                 startAdornment={
                   <InputAdornment position="start">
-                    <AccountCircle fontSize="large" />
+                    <Mail fontSize="medium" />
                   </InputAdornment>
                 }
                 sx={{
@@ -47,21 +50,19 @@ const Signup = () => {
                 }}
               />
             </FormControl>
-            <FormControl
-              variant="standard"
-              sx={{ width: "80%", mb: 2, marginTop: "40px" }}
-            >
+            <FormControl variant="standard" sx={{ width: "80%", mb: 2 }}>
               <InputLabel
                 htmlFor="input-with-icon-adornment"
-                sx={{ fontSize: "1.2rem" }}
+                sx={{ fontSize: 15, fontWeight: 400 }}
               >
                 Username
               </InputLabel>
               <Input
                 id="input-with-icon-adornment"
+                placeholder="Type Your Username"
                 startAdornment={
                   <InputAdornment position="start">
-                    <AccountCircle fontSize="large" />
+                    <PersonAddAlt1 fontSize="medium" />
                   </InputAdornment>
                 }
                 sx={{
@@ -70,21 +71,19 @@ const Signup = () => {
                 }}
               />
             </FormControl>
-            <FormControl
-              variant="standard"
-              sx={{ marginTop: "40px", width: "80%", mb: 2 }}
-            >
+            <FormControl variant="standard" sx={{ width: "80%", mb: 2 }}>
               <InputLabel
                 htmlFor="input-with-icon-adornment"
-                sx={{ fontSize: "1.2rem" }}
+                sx={{ fontSize: 15, fontWeight: 400 }}
               >
                 Password
               </InputLabel>
               <Input
                 id="input-with-icon-adornment"
+                placeholder="Type Your Password"
                 startAdornment={
                   <InputAdornment position="start">
-                    <AccountCircle fontSize="large" />
+                    <LockRounded fontSize="medium" />
                   </InputAdornment>
                 }
                 sx={{
@@ -92,24 +91,10 @@ const Signup = () => {
                   height: "56px", // Set height
                 }}
               />
-              <div className="remeber">
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      defaultChecked
-                      sx={{
-                        color: "#878C90",
-                        "&.Mui-checked": { color: "#878C90" },
-                      }}
-                    />
-                  }
-                  label={<span style={{ color: "#878C90" }}>Remember Me</span>}
-                />
 
-                <span>Forget Password</span>
+              <div className="loginBtn">
+                <button className="login-btn">SIGNUP</button>
               </div>
-
-              <button className="login-btn">SIGNUP</button>
               <span
                 style={{
                   fontSize: 15,

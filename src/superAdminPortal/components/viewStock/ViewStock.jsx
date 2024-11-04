@@ -3,6 +3,7 @@ import "./ViewStock.css";
 import product from "../../../images/bursting.png";
 
 import Pagination from "../pagination/pagination.jsx";
+import Table from "../table/Table.jsx";
 const ViewStock = () => {
   const orderInfo = [
     "IMAGE",
@@ -109,7 +110,7 @@ const ViewStock = () => {
   return (
     <div className="stock">
       <div className="stock-card">
-        <div className="stock-info">
+        {/* <div className="stock-info">
           {orderInfo &&
             orderInfo.map((info) => {
               return <span>{info}</span>;
@@ -151,7 +152,9 @@ const ViewStock = () => {
                 </>
               );
             })}
-        </div>
+        </div> */}
+
+        <Table titles={orderInfo} info={orderDetails} />
         <Pagination rows={orderDetails.length} />
       </div>
     </div>

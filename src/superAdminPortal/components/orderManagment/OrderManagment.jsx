@@ -1,126 +1,30 @@
 import "../viewStock/ViewStock.css";
+import "./OrderManagment.css";
 
-import product from "../../../images/bursting.png";
+import data from "../../../data/data";
 import SelectMenu from "../selectMenu/SelectMenu";
+import CardContainer from "../cardContainer/CardContainer";
 const OrderManagment = () => {
-  const orderInfo = [
-    "IMAGE",
-    "ITEM",
-    "PAYMENT",
-    "DATE",
-    "PRICE",
-    "STATUS",
-    "QTY",
-    "CITY",
-    "ACTION",
-  ];
-
-  const orderDetails = [
-    {
-      image: product,
-      name: "Smart Phone",
-      payment: "Cash",
-      date: "Apr 9 , 2023",
-      price: "$1200",
-      status: "Ready",
-      customName: "Fig Nelson",
-      qty: 1,
-      city: "New York",
-    },
-    {
-      image: product,
-      name: "Smart Phone",
-      payment: "Cash",
-      date: "Apr 9 , 2023",
-      price: "$1200",
-      status: "Ready",
-      customName: "Fig Nelson",
-      qty: 1,
-      city: "New York",
-    },
-    {
-      image: product,
-      name: "Smart Phone",
-      payment: "Cash",
-      date: "Apr 9 , 2023",
-      price: "$1200",
-      status: "Ready",
-      customName: "Fig Nelson",
-      qty: 1,
-      city: "New York",
-    },
-    {
-      image: product,
-      name: "Smart Phone",
-      payment: "Cash",
-      date: "Apr 9 , 2023",
-      price: "$1200",
-      status: "Ready",
-      customName: "Fig Nelson",
-      qty: 1,
-      city: "New York",
-    },
-    {
-      image: product,
-      name: "Smart Phone",
-      payment: "Cash",
-      date: "Apr 9 , 2023",
-      price: "$1200",
-      status: "Ready",
-      customName: "Fig Nelson",
-      qty: 1,
-      city: "New York",
-    },
-    {
-      image: product,
-      name: "Smart Phone",
-      payment: "Cash",
-      date: "Apr 9 , 2023",
-      price: "$1200",
-      status: "Ready",
-      customName: "Fig Nelson",
-      qty: 1,
-      city: "New York",
-    },
-    {
-      image: product,
-      name: "Smart Phone",
-      payment: "Cash",
-      date: "Apr 9 , 2023",
-      price: "$1200",
-      status: "Ready",
-      customName: "Fig Nelson",
-      qty: 1,
-      city: "New York",
-    },
-    {
-      image: product,
-      name: "Smart Phone",
-      payment: "Cash",
-      date: "Apr 9 , 2023",
-      price: "$1200",
-      status: "Ready",
-      customName: "Fig Nelson",
-      qty: 1,
-      city: "New York",
-    },
-  ];
   return (
     <div className="stock">
+      <CardContainer />
       <div className="stock-card">
-        <div className="stock-info">
-          {orderInfo &&
-            orderInfo.map((info) => {
+        <div className="orderManagment-title">
+          {data.orderManagmentTitle &&
+            data.orderManagmentTitle.map((info) => {
               return <span>{info}</span>;
             })}
         </div>
         <div className="line"></div>
-        <div className="stock-detail">
-          {orderDetails &&
-            orderDetails.map((detail) => {
+        <div className="orderManagment-items">
+          {data.orderManagmentDetails &&
+            data.orderManagmentDetails.map((detail) => {
               return (
                 <>
-                  <div className="stock-items">
+                  <div
+                    style={{ justifyContent: "space-around" }}
+                    className="stock-items"
+                  >
                     <div className="product-img">
                       <img src={detail.image} alt="" srcset="" />
                     </div>
@@ -129,6 +33,7 @@ const OrderManagment = () => {
                     <span>{detail.payment}</span>
                     <span>{detail.date}</span>
                     <span>{detail.price}</span>
+                    <span>{detail.customName}</span>
                     <span>{detail.status}</span>
                     <span>{detail.qty}</span>
                     <span>{detail.city}</span>

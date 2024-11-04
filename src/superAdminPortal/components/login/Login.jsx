@@ -21,13 +21,10 @@ const Login = () => {
             <img src={logo} alt="Logo" srcset="" />
           </div>
           <div className="login-card">
-            <div className="heading">
+            <div className="login-heading">
               <span>LOGIN</span>
             </div>
-            <FormControl
-              variant="standard"
-              sx={{ width: "80%", mb: 2, marginTop: "40px" }}
-            >
+            <FormControl variant="standard" sx={{ width: "80%", mb: 2 }}>
               <InputLabel
                 htmlFor="input-with-icon-adornment"
                 sx={{ fontSize: 15, fontWeight: 400 }}
@@ -39,7 +36,7 @@ const Login = () => {
                 placeholder="Type Your Username"
                 startAdornment={
                   <InputAdornment position="start">
-                    <PersonAddAlt1 fontSize="large" />
+                    <PersonAddAlt1 fontSize="medium" />
                   </InputAdornment>
                 }
                 sx={{
@@ -60,7 +57,7 @@ const Login = () => {
                 placeholder="Type Your Password"
                 startAdornment={
                   <InputAdornment position="start">
-                    <LockRounded fontSize="large" />
+                    <LockRounded fontSize="medium" />
                   </InputAdornment>
                 }
                 sx={{

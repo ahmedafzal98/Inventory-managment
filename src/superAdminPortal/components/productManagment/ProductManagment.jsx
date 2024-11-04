@@ -1,116 +1,12 @@
 import "../viewStock/ViewStock.css";
 import "./ProductManagment.css";
-
-import product from "../../../images/bursting.png";
+import data from "../../../data/data";
 
 import { useEffect, useState } from "react";
 import { Add, Check, Delete, Edit } from "@mui/icons-material";
 import { Fab } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
-const orderInfo = [
-  "IMAGE",
-  "ITEM",
-  "PRODUCT ID",
-  "DATE",
-  "PRICE",
-  "CUSTOMER",
-  "QTY",
-  "CITY",
-  "STATUS",
-  "ACTIONS",
-];
-
-const orderDetails = [
-  {
-    image: product,
-    name: "Smart Phone",
-    prod_id: 4827,
-    date: "Apr 9 , 2023",
-    price: "$1200",
-    customName: "Fig Nelson",
-    qty: 1,
-    city: "New York",
-    status: "In Stock",
-  },
-  {
-    image: product,
-    name: "Smart Phone",
-    prod_id: 4827,
-    date: "Apr 9 , 2023",
-    price: "$1200",
-    customName: "Fig Nelson",
-    qty: 1,
-    city: "New York",
-    status: "Out Stock",
-  },
-  {
-    image: product,
-    name: "Smart Phone",
-    prod_id: 4827,
-    date: "Apr 9 , 2023",
-    qty: 1,
-    price: "$1200",
-    customName: "Fig Nelson",
-    city: "New York",
-    status: "Low Stock",
-  },
-  {
-    image: product,
-    name: "Smart Phone",
-    prod_id: 4827,
-    qty: 1,
-    date: "Apr 9 , 2023",
-    price: "$1200",
-    customName: "Fig Nelson",
-    city: "New York",
-    status: "In Stock",
-  },
-  {
-    image: product,
-    name: "Smart Phone",
-    prod_id: 4827,
-    date: "Apr 9 , 2023",
-    price: "$1200",
-    customName: "Fig Nelson",
-    qty: 1,
-    city: "New York",
-    status: "In Stock",
-  },
-  {
-    image: product,
-    name: "Smart Phone",
-    prod_id: 4827,
-    date: "Apr 9 , 2023",
-    price: "$1200",
-    customName: "Fig Nelson",
-    qty: 1,
-    city: "New York",
-    status: "In Stock",
-  },
-  {
-    image: product,
-    name: "Smart Phone",
-    prod_id: 4827,
-    date: "Apr 9 , 2023",
-    qty: 1,
-    price: "$1200",
-    customName: "Fig Nelson",
-    city: "New York",
-    status: "In Stock",
-  },
-  {
-    image: product,
-    name: "Smart Phone",
-    prod_id: 4827,
-    qty: 1,
-    date: "Apr 9 , 2023",
-    price: "$1200",
-    customName: "Fig Nelson",
-    city: "New York",
-    status: "In Stock",
-  },
-];
 const ProductManagment = () => {
   const [isEdit, setIsEdit] = useState(false);
   const [selectedItem, setSelectedItem] = useState();
@@ -123,7 +19,7 @@ const ProductManagment = () => {
   };
 
   useEffect(() => {
-    setOrderDetail(orderDetails); // Initialize state with data on component mount
+    setOrderDetail(data.productManagmentDetails); // Initialize state with data on component mount
   }, []);
 
   const HandleEdit = (index) => {
@@ -137,18 +33,10 @@ const ProductManagment = () => {
     setOrderDetail(updatedOrderDetail); // Update state with the new array
   };
 
-  console.log(OrderDetail);
+  console.log(data.productManagmentDetails);
   return (
     <>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-        className="stock"
-      >
+      <div className="stock">
         <div className="addIcon">
           <Fab
             sx={{ backgroundColor: "#fff" }}
@@ -161,17 +49,17 @@ const ProductManagment = () => {
         <div className="stock-card">
           <div
             style={{ justifyContent: "space-around" }}
-            className="stock-info"
+            className="productManagment-title"
           >
-            {orderInfo &&
-              orderInfo.map((info) => {
+            {data.productManagmentTitle &&
+              data.productManagmentTitle.map((info) => {
                 return <span>{info}</span>;
               })}
           </div>
           <div className="line"></div>
-          <div className="stock-detail">
-            {OrderDetail &&
-              OrderDetail.map((detail, index) => {
+          <div className="productManagment-items">
+            {data.productManagmentDetails &&
+              data.productManagmentDetails.map((detail, index) => {
                 const isDisabled = isEdit && index === selectedItem;
 
                 return (
@@ -229,18 +117,18 @@ const ProductManagment = () => {
                       <div className="icons">
                         {isEdit && index === selectedItem ? (
                           <Check
-                            fontSize="large"
+                            fontSize="medium"
                             onClick={() => HandleEdit(index)}
                           />
                         ) : (
                           <Edit
-                            fontSize="large"
+                            fontSize="medium"
                             onClick={() => HandleEdit(index)}
                           />
                         )}
                         {/* <img src={deleteIcon} alt="Delete Icon" srcset="" /> */}
                         <Delete
-                          fontSize="large"
+                          fontSize="medium"
                           onClick={() => HandleDelete(index)}
                         />
                       </div>
