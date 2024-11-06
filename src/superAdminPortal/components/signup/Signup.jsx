@@ -9,6 +9,7 @@ import { doc, setDoc } from "firebase/firestore";
 import { auth, db } from "../../../firebase/FirebaseConfig";
 
 import {
+  CircularProgress,
   FormControl,
   FormHelperText,
   Input,
@@ -21,8 +22,10 @@ import { useFormik } from "formik";
 import { useDispatch } from "react-redux";
 import { openSnakbar } from "../../../store/SnackbarSlice";
 import CustomSnackbar from "../snackbar/Snackbar";
+import { useState } from "react";
 
 const Signup = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -47,32 +50,55 @@ const Signup = () => {
       const { username, email, password } = values;
 
       try {
+        setIsLoading(true);
         const userCredential = await signupWithEmailAndPassword(
           email,
           password
         );
-        // const uid = userCredential.uid;
+        const uid = userCredential.uid;
 
-        await setDoc(doc(db, "users", username), {
+        await setDoc(doc(db, "users", uid), {
           username,
           email,
           createdAt: new Date(),
         });
 
-        dispatch(
-          openSnakbar({
-            message: "You have successfully registered!",
-            severity: "success",
-          })
-        );
+        setIsLoading(false);
+        dispatchSnackBar("You have successfully registered!", "success");
+        navigate("/");
       } catch (error) {
-        dispatch(
-          openSnakbar({ message: "Error signing up", severity: "error" })
-        );
+        setIsLoading(false);
+        dispatchSnackBar(getFirebaseErrorMessage(error.code), "error");
       }
     },
   });
 
+  const dispatchSnackBar = (message, type) => {
+    dispatch(
+      openSnakbar({
+        message: message,
+        severity: type,
+      })
+    );
+  };
+  const getFirebaseErrorMessage = (code) => {
+    switch (code) {
+      case "auth/user-not-found":
+        return "No user found with this email address.";
+      case "auth/wrong-password":
+        return "Incorrect password. Please try again.";
+      case "auth/email-already-in-use":
+        return "Email-already-in-use.";
+      case "auth/weak-password":
+        return "Password should be at least 6 characters.";
+      case "auth/invalid-email":
+        return "The email address is not valid.";
+      case "auth/invalid-credential":
+        return "Invalid credential. Please check your login information.";
+      default:
+        return "An unexpected error occurred. Please try again.";
+    }
+  };
   return (
     <div className="login">
       <div className="login-container">
@@ -187,7 +213,13 @@ const Signup = () => {
               </FormControl>
 
               <div className="loginBtn">
-                <button type="submit">SignUp</button>
+                {isLoading ? (
+                  <CircularProgress />
+                ) : (
+                  <button type="submit" className="login-btn">
+                    SignUp
+                  </button>
+                )}
               </div>
             </form>
 

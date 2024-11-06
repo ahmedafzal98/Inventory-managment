@@ -11,10 +11,11 @@ const snackbarSlice = createSlice({
     openSnakbar: (state, action) => {
       state.open = true;
       state.message = action.payload.message;
-      state.severity = action.payload.severity;
+      state.severity = action.payload.severity || "success";
     },
     closeSnackbar: (state) => {
       state.open = false;
+      state.message = ''
     },
   },
 });

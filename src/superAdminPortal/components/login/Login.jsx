@@ -19,11 +19,24 @@ import * as Yup from "yup";
 import { LockRounded, Password, PersonAddAlt1 } from "@mui/icons-material";
 import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
-import { doc, getDoc } from "firebase/firestore";
+import {
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  query,
+  where,
+} from "firebase/firestore";
 import { db } from "../../../firebase/FirebaseConfig";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { openSnakbar } from "../../../store/SnackbarSlice";
+import { getUserId } from "../../../store/UserSlice";
 
 const Login = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const validationSchema = Yup.object({
     username: Yup.string().required("Username is Required"),
@@ -41,19 +54,78 @@ const Login = () => {
       const { username, password } = values;
 
       try {
-        const userDoc = await getDoc(doc(db, "users", username));
+        setIsLoading(true);
 
-        if (userDoc.exists()) {
+        const usersQuery = query(
+          collection(db, "users"),
+          where("username", "==", username)
+        );
+
+        const querySnapshot = await getDocs(usersQuery);
+
+        if (!querySnapshot.empty) {
+          const userDoc = querySnapshot.docs[0];
+
           const email = userDoc.data().email;
 
-          await signinWithEmailAndPassword(email, password);
+          const userCredential = await signinWithEmailAndPassword(
+            email,
+            password
+          );
+          const user = userCredential.user;
+          const uid = user.uid;
+
+          localStorage.setItem("uid", uid);
+          dispatchUserId(uid);
+          dispatchSnackBar("Logged in successfully!", "success");
+
+          setIsLoading(false);
           navigate("/");
+        } else {
+          setIsLoading(false);
+          dispatchSnackBar("This Username Does not exist", "error");
         }
       } catch (error) {
-        console.log(error);
+        setIsLoading(false);
+        dispatchSnackBar(getFirebaseErrorMessage(error.code), "error");
       }
     },
   });
+
+  const dispatchUserId = (id) => {
+    dispatch(
+      getUserId({
+        uid: id,
+      })
+    );
+  };
+  const dispatchSnackBar = (message, type) => {
+    dispatch(
+      openSnakbar({
+        message: message,
+        severity: type,
+      })
+    );
+  };
+  const getFirebaseErrorMessage = (code) => {
+    switch (code) {
+      case "auth/user-not-found":
+        return "No user found with this email address.";
+      case "auth/wrong-password":
+        return "Incorrect password. Please try again.";
+      case "auth/email-already-in-use":
+        return "This email is already associated with an account.";
+      case "auth/weak-password":
+        return "Password should be at least 6 characters.";
+      case "auth/invalid-email":
+        return "The email address is not valid.";
+      case "auth/invalid-credential":
+        return "Invalid credential. Please check your login information.";
+      default:
+        return "An unexpected error occurred. Please try again.";
+    }
+  };
+
   return (
     <div className="login">
       <div className="login-container">
@@ -152,10 +224,13 @@ const Login = () => {
               </div>
 
               <div className="loginBtn">
-                <button type="submit" className="login-btn">
-                  Sign In
-                </button>
-                <CircularProgress />
+                {isLoading ? (
+                  <CircularProgress />
+                ) : (
+                  <button type="submit" className="login-btn">
+                    Sign In
+                  </button>
+                )}
               </div>
             </form>
             <span

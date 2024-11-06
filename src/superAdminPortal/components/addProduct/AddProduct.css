@@ -1,6 +1,7 @@
 @font-face {
   font-family: "Inter-regular";
-  src: url("../../../fonts/Inter/static/Inter_18pt-Regular.ttf") format("truetype");
+  src: url("../../../fonts/Inter/static/Inter_18pt-Regular.ttf")
+    format("truetype");
 }
 
 .add-product {
@@ -16,16 +17,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05),
-    0 -4px 15px rgba(0, 0, 0, 0.05),
-    4px 0 15px rgba(0, 0, 0, 0.05),
-    -4px 0 15px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05), 0 -4px 15px rgba(0, 0, 0, 0.05),
+    4px 0 15px rgba(0, 0, 0, 0.05), -4px 0 15px rgba(0, 0, 0, 0.05);
   background-color: #fff;
   margin: 3% auto; /* Center with automatic left/right margins */
   border-radius: 14px;
   padding: 20px; /* Add padding for better spacing */
 }
-
 
 .form {
   width: 100%; /* Set to 100% for better responsiveness */
@@ -49,7 +47,7 @@
 }
 .input-Text span {
   color: #000;
-  font-family: 'Inter-regular';
+  font-family: "Inter-regular";
   font-size: 20px; /* Slightly smaller font for better fit */
 }
 
@@ -60,6 +58,8 @@
   border-radius: 10px;
   border: 1px solid #d9d9d9;
   box-sizing: border-box; /* Ensure padding and border are included in width */
+  font-size: 16px;
+  padding-left: 20px;
 }
 
 .rich-input-Text input {
@@ -67,7 +67,7 @@
   height: 225px;
 }
 
-.group3{
+.group3 {
   width: 32%;
 }
 .group2 {
@@ -85,7 +85,7 @@
   margin-top: 20px;
   width: 30%; /* Make the button take more width */
   max-width: 200px; /* Set a max width for the button */
-  background-color: #1773D9; /* Original background color */
+  background-color: #1773d9; /* Original background color */
   border-radius: 5px;
   color: #fff;
   border: none;

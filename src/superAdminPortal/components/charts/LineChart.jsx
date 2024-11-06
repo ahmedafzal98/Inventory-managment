@@ -54,7 +54,6 @@ const LineChart = () => {
   };
 
   useEffect(() => {
-    // Clean up the chart instance on unmount
     return () => {
       const chartInstance = ChartJS.instances[0];
       if (chartInstance) {
@@ -65,7 +64,7 @@ const LineChart = () => {
 
   return (
     <div>
-      <h2 style={{ fontSize: 30, margin: "30px" }}>Revenuse Chart</h2>
+      <h2 style={{ fontSize: 30, margin: "30px" }}>Revenue Chart</h2>
       <Line data={data} options={options} />
     </div>
   );

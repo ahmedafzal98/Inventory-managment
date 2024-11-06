@@ -3,6 +3,7 @@ import AuthRoutes from "./superAdminPortal/authRoutes/Login";
 import MainRoute from "./superAdminPortal/mainRoutes/MainRoute";
 import { Provider } from "react-redux";
 import store from "./store/store";
+import CustomSnackbar from "./superAdminPortal/components/snackbar/Snackbar";
 
 const App = () => {
   const location = useLocation();
@@ -12,6 +13,9 @@ const App = () => {
 
   return (
     <Provider store={store}>
+      <CustomSnackbar />
+      {console.log(store)}
+
       {isAuthPage ? <AuthRoutes /> : <MainRoute />}
     </Provider>
   );

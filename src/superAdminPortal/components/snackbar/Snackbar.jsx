@@ -4,7 +4,7 @@ import { closeSnackbar } from "../../../store/SnackbarSlice";
 
 const CustomSnackbar = () => {
   const dispatch = useDispatch();
-  const snackbar = useSelector((state) => state.snackbar);
+  const { open, message, severity } = useSelector((state) => state.snackbar);
 
   const handleClose = (event, reason) => {
     if (reason === "clickaway") {
@@ -13,18 +13,14 @@ const CustomSnackbar = () => {
     dispatch(closeSnackbar());
   };
   return (
-    <Snackbar
-      open={snackbar.open}
-      autoHideDuration={4000}
-      onClose={handleClose}
-    >
+    <Snackbar open={open} autoHideDuration={4000} onClose={handleClose}>
       <Alert
         onClose={handleClose}
-        severity={snackbar.severity}
+        severity={severity}
         variant="filled"
         sx={{ width: "100%" }}
       >
-        {snackbar.message}
+        {message}
       </Alert>
     </Snackbar>
   );

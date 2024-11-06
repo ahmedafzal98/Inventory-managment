@@ -1,12 +1,24 @@
-import cart from "../../../assets/cart-white-icon.svg";
-import sales from "../../../assets/sales-white-icon.svg";
-import inventory from "../../../assets/inventory-white-icon.png";
+import ListAltOutlinedIcon from "@mui/icons-material/ListAltOutlined";
+import ApartmentOutlinedIcon from "@mui/icons-material/ApartmentOutlined";
+import Inventory2OutlinedIcon from "@mui/icons-material/Inventory2Outlined";
 import "./CardContainer.css";
 const CardContainer = () => {
   const info = [
-    { title: "Reparation", src: cart, price: 550 },
-    { title: "Client", src: sales, price: 220 },
-    { title: "Inventory Product", src: inventory, price: 50 },
+    {
+      title: "Oders",
+      src: <ListAltOutlinedIcon fontSize="large" sx={{ color: "white" }} />,
+      price: 550,
+    },
+    {
+      title: "Organization",
+      src: <ApartmentOutlinedIcon fontSize="large" sx={{ color: "white" }} />,
+      price: 10,
+    },
+    {
+      title: "Inventory",
+      src: <Inventory2OutlinedIcon fontSize="large" sx={{ color: "white" }} />,
+      price: 50,
+    },
   ];
   return (
     <div className="card-container">
@@ -23,9 +35,7 @@ const CardContainer = () => {
                     <span>{item.price}</span>
                   </div>
                 </div>
-                <div className="card-icon">
-                  <img src={item.src} alt="Cart" srcSet="" />
-                </div>
+                <div className="card-icon">{item.src}</div>
               </div>
               <div className="card-bottom">
                 <span>More Info</span>

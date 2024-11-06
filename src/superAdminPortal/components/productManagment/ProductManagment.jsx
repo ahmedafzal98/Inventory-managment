@@ -33,7 +33,6 @@ const ProductManagment = () => {
     setOrderDetail(updatedOrderDetail); // Update state with the new array
   };
 
-  console.log(data.productManagmentDetails);
   return (
     <>
       <div className="stock">
