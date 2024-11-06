@@ -17,12 +17,6 @@ export const getProducts = async () => {
   }
 };
 
-//  google authentication
-//  text summarization Api
-//  E2 speech practice
-//  Grand Quiz (Crypto)
-//  Quiz (Stats)
-
 export const updateProduct = async (productId, updatedData) => {
   try {
     const docRef = doc(db, "products", productId);

@@ -25,11 +25,14 @@
     justify-content: space-between;
     width: 100%;
 }
-
+.table-title span{
+    font-size: 18px;
+}
 .table-title span,
 .table-items span {
-    font-size: 14px;
-    color: #9499A1;
+    font-size: 16px;
+    font-weight: 600;
+    color: #;
 }
 
 /* Product image styling */
@@ -95,7 +98,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px;
+    padding: 8px;
 }
 .status {
     display: flex;

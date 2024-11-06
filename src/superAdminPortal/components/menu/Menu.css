@@ -15,8 +15,8 @@
   cursor: pointer;
 }
 .menu-item span {
-  color: #878c90;
-  font-size: 16px;
+  color: #000;
+  font-size: 18px;
   font-family: "Inter-regular";
   margin-left: 30px;
 }
@@ -51,7 +51,7 @@
 .sub-menu-item {
   height: 200px;
   text-decoration: none;
-  color: #878c90;
+  color: #000;
   font-size: 16px;
   list-style-type: circle; /* Set circle for individual items */
 }
