@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { collection, addDoc, doc, setDoc } from "firebase/firestore";
 import { db } from "../../../firebase/FirebaseConfig";
 import { getUserId } from "../../../store/UserSlice";
+import { openSnakbar } from "../../../store/SnackbarSlice";
 const AddProduct = () => {
   const dispatch = useDispatch();
   const { uid } = useSelector((state) => state.users);
@@ -66,15 +67,24 @@ const AddProduct = () => {
           detail: values.detail,
         });
 
+        dispatchSnackBar("Product added successfully", "success");
         console.log("Product added with ID:", docRef.id);
 
         setIsLoading(false);
       } catch (error) {
+        dispatchSnackBar("Error adding product:", "error");
         console.error("Error adding product: ", error);
       }
     },
   });
-
+  const dispatchSnackBar = (message, type) => {
+    dispatch(
+      openSnakbar({
+        message: message,
+        severity: type,
+      })
+    );
+  };
   useEffect(() => {
     const storedUid = localStorage.getItem("uid");
     dispatch(
