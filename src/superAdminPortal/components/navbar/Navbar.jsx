@@ -29,9 +29,9 @@ const Navbar = ({ navText }) => {
               <img src={mailIcon} alt="Mail Icon" srcset="" />
               <img src={infoIcon} alt="Info Icon" srcset="" />
             </div>
-            <div className="vr">a</div>
+            <div className="vr"></div>
             <div className="logo">
-              <Link to="/login">
+              <Link to="/login" onClick={() => localStorage.removeItem("uid")}>
                 <img src={logo} alt="Logo" />
               </Link>
             </div>

@@ -68,7 +68,8 @@
 }
 
 .group3 {
-  width: 32%;
+  width: 67%;
+  display: flex;
 }
 .group2 {
   margin-top: 20px; /* Reduced margin for better spacing */

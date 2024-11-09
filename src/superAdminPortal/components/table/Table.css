@@ -54,6 +54,18 @@
     font-weight: 500;
     width: 10%; /* Adjust width if needed */
 }
+.table-title span:nth-child(1){
+    width: 4%;
+    text-align: left;
+}
+.table-title span:nth-child(5){
+    width: 5%;
+    text-align: left;
+}
+.table-title span:nth-child(6){
+    width: 7%;
+    text-align: left;
+}
 .table-items span:nth-child(3) { /* Price column */
     text-align: center;
     width: 8%; /* Adjust width if needed */

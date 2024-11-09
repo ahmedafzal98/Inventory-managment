@@ -4,10 +4,11 @@ import * as Yup from "yup";
 import { CircularProgress, FormControl, FormHelperText } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { collection, addDoc, doc, setDoc } from "firebase/firestore";
+import { collection, addDoc, doc, setDoc, Timestamp } from "firebase/firestore";
 import { db } from "../../../firebase/FirebaseConfig";
 import { getUserId } from "../../../store/UserSlice";
 import { openSnakbar } from "../../../store/SnackbarSlice";
+import { addProduct } from "../../../firebase/dbService";
 const AddProduct = () => {
   const dispatch = useDispatch();
   const { uid } = useSelector((state) => state.users);
@@ -29,6 +30,7 @@ const AddProduct = () => {
       supplier: "",
       alertQuantity: 0,
       name: "",
+      organization: "",
       category: "",
       unit: 0,
       code: "",
@@ -43,18 +45,18 @@ const AddProduct = () => {
     validationSchema: validationSchema,
     onSubmit: async (values) => {
       setIsLoading(true);
-      console.log("Product Form", values);
 
       try {
-        const userDocRef = doc(db, "users", uid);
+        // Ensure uid (userId) is available
+        if (!uid) throw new Error("User ID is not available");
 
-        const productCollectionRef = collection(userDocRef, "products");
-
-        const docRef = await addDoc(productCollectionRef, {
+        // Prepare product data from form values
+        const productData = {
           type: values.type,
           supplier: values.supplier,
           alertQuantity: values.alertQuantity,
           name: values.name,
+          organization: values.organization,
           category: values.category,
           unit: values.unit,
           code: values.code,
@@ -65,15 +67,21 @@ const AddProduct = () => {
           image: values.image,
           productQuantity: values.productQuantity,
           detail: values.detail,
-        });
+          date: Timestamp.now(),
+        };
 
+        // Call addProduct and pass userId and productData
+        const productId = await addProduct(uid, productData);
+
+        // Success handling
         dispatchSnackBar("Product added successfully", "success");
-        console.log("Product added with ID:", docRef.id);
-
-        setIsLoading(false);
+        console.log("Product added with ID:", productId);
       } catch (error) {
-        dispatchSnackBar("Error adding product:", "error");
-        console.error("Error adding product: ", error);
+        // Error handling
+        dispatchSnackBar("Error adding product.", "error");
+        console.error("Error adding product:", error);
+      } finally {
+        setIsLoading(false);
       }
     },
   });
@@ -317,6 +325,21 @@ const AddProduct = () => {
                       name="productQuantity"
                       id=""
                       value={formik.values.productQuantity}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                    />
+                  </div>
+                </FormControl>
+              </div>
+              <div className="input-Text">
+                <FormControl variant="standard" sx={{ width: "80%", mb: 2 }}>
+                  <span>Organization </span>
+                  <div className="textfield">
+                    <input
+                      type="text"
+                      name="organization"
+                      id=""
+                      value={formik.values.organization}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
                     />

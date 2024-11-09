@@ -29,17 +29,7 @@ const Menu = () => {
       ],
     },
     { title: "Orders / Invoice", src: orders, path: "/orders" },
-    { title: "Tracking", src: tracking, path: "/tracking" },
-    { title: "Tracking Status", src: reports, path: "/tracking-status" },
-    { title: "Email Updates", src: message, path: "/email-updates" },
-    {
-      title: "Delivery Confirmation",
-      src: delievery,
-      path: "/delivery-confirmation",
-    },
-    { title: "Tax", src: reports, path: "/tax" },
-    { title: "Wallet", src: wallet, path: "/wallet" },
-    { title: "Settings", src: settings, path: "/settings" },
+    { title: "Sales", src: tracking, path: "/sales" },
   ];
 
   const handleMenuClick = (item) => {

@@ -100,9 +100,8 @@ const productManagmentTitle = [
   "PRODUCT ID",
   "DATE",
   "PRICE",
-  "CUSTOMER NAME",
+  "ORGANIZATION",
   "QUANTITY",
-  "CITY",
   "STATUS",
   "ACTIONS",
 ];
