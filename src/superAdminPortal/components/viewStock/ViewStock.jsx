@@ -4,6 +4,7 @@ import product from "../../../images/bursting.png";
 
 import Pagination from "../pagination/pagination.jsx";
 import Table from "../table/Table.jsx";
+import EnhancedTable from "../table/Table.jsx";
 const ViewStock = () => {
   const orderInfo = [
     "IMAGE",
@@ -155,7 +156,9 @@ const ViewStock = () => {
             })}
         </div> */}
 
-        <Table titles={orderInfo} info={orderDetails} />
+        {/* <Table titles={orderInfo} info={orderDetails} /> */}
+
+        <EnhancedTable />
         <Pagination rows={orderDetails.length} />
       </div>
     </div>

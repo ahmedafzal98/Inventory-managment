@@ -3,7 +3,10 @@ import logo from "../../../assets/logo.svg";
 import facebookIcon from "../../../assets/Facebook.svg";
 import google from "../../../assets/Google.svg";
 import twitter from "../../../assets/Twitter.svg";
-import { signinWithEmailAndPassword } from "../../../firebase/AuthService";
+import {
+  googleAuth,
+  signinWithEmailAndPassword,
+} from "../../../firebase/AuthService";
 import {
   Checkbox,
   CircularProgress,
@@ -125,7 +128,26 @@ const Login = () => {
         return "An unexpected error occurred. Please try again.";
     }
   };
+  const HandleGoogleAuth = async () => {
+    try {
+      const { user, isNewUser } = await googleAuth.googleSignIn();
 
+      if (user) {
+        if (isNewUser) {
+          console.log("New user registered:", user);
+          // Additional steps if needed for new users, like onboarding
+        } else {
+          console.log("Returning user logged in:", user);
+        }
+
+        // Navigate to the dashboard or home page
+        navigate("/");
+      }
+    } catch (error) {
+      console.error("Google sign-in failed:", error);
+      // Display error notification or message
+    }
+  };
   return (
     <div className="login">
       <div className="login-container">
@@ -247,7 +269,7 @@ const Login = () => {
             <div className="socialIcons">
               <img src={facebookIcon} alt="Facebook " />
               <img src={twitter} alt="Twitter " />
-              <img src={google} alt="Google " />
+              <img src={google} onClick={HandleGoogleAuth} alt="Google " />
             </div>
 
             {/* This text will stay at the bottom of the card */}

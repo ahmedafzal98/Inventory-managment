@@ -4,19 +4,14 @@ import "./OrderManagment.css";
 import data from "../../../data/data";
 import SelectMenu from "../selectMenu/SelectMenu";
 import CardContainer from "../cardContainer/CardContainer";
+import EnhancedTable from "../table/Table";
 const OrderManagment = () => {
   return (
     <div className="stock">
       <CardContainer />
       <div className="stock-card">
-        <div className="orderManagment-title">
-          {data.orderManagmentTitle &&
-            data.orderManagmentTitle.map((info) => {
-              return <span>{info}</span>;
-            })}
-        </div>
-        <div className="line"></div>
-        <div className="orderManagment-items">
+        <EnhancedTable />
+        {/* <div className="orderManagment-items">
           {data.orderManagmentDetails &&
             data.orderManagmentDetails.map((detail) => {
               return (
@@ -29,7 +24,6 @@ const OrderManagment = () => {
                       <img src={detail.image} alt="" srcset="" />
                     </div>
                     <span style={{ color: "#3D475C" }}>{detail.name}</span>
-                    {/* <span>{detail.name}</span> */}
                     <span>{detail.payment}</span>
                     <span>{detail.date}</span>
                     <span>{detail.price}</span>
@@ -44,7 +38,7 @@ const OrderManagment = () => {
                 </>
               );
             })}
-        </div>
+        </div> */}
       </div>
     </div>
   );

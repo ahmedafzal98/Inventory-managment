@@ -6,7 +6,16 @@ import infoIcon from "../../../assets/info-Icon.svg";
 import logo from "../../../assets/logo.svg";
 import Title from "../portalTitle/Title";
 import { Link } from "react-router-dom";
+import { auth } from "../../../firebase/FirebaseConfig";
 const Navbar = ({ navText }) => {
+  const HandleLogoClick = () => {
+    localStorage.removeItem("uid");
+    try {
+      auth.signOut();
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -31,7 +40,7 @@ const Navbar = ({ navText }) => {
             </div>
             <div className="vr"></div>
             <div className="logo">
-              <Link to="/login" onClick={() => localStorage.removeItem("uid")}>
+              <Link to="/login" onClick={HandleLogoClick}>
                 <img src={logo} alt="Logo" />
               </Link>
             </div>
