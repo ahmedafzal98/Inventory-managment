@@ -11,6 +11,7 @@ import OrderManagement from "../components/orderManagment/OrderManagment";
 import Login from "../components/login/Login";
 import { useEffect, useState } from "react";
 import ProductManagment from "../components/productManagment/ProductManagment";
+import Sales from "../components/sales/Sales";
 
 const MainRoute = () => {
   const [navText, setNavText] = useState("Dashboard"); // Default navbar text
@@ -42,6 +43,9 @@ const MainRoute = () => {
         break;
       case "/login":
         setNavText("Login");
+        break;
+      case "/sales":
+        setNavText("Sales");
         break;
       default:
         setNavText("Dashboard");
@@ -77,6 +81,7 @@ const MainRoute = () => {
             element={<EditRemoveProduct />}
           />
           <Route path="/inventory/price" element={<Price />} />
+          <Route path="/sales" element={<Sales />} />
         </Routes>
       </div>
     </>

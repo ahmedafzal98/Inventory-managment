@@ -130,22 +130,25 @@ const Login = () => {
   };
   const HandleGoogleAuth = async () => {
     try {
+      setIsLoading(true);
       const { user, isNewUser } = await googleAuth.googleSignIn();
 
       if (user) {
         if (isNewUser) {
           console.log("New user registered:", user);
+          dispatchSnackBar("New user registered", "success");
           // Additional steps if needed for new users, like onboarding
         } else {
-          console.log("Returning user logged in:", user);
+          dispatchSnackBar("Returning user logged in", "success");
         }
 
         // Navigate to the dashboard or home page
+        setIsLoading(false);
         navigate("/");
       }
     } catch (error) {
-      console.error("Google sign-in failed:", error);
-      // Display error notification or message
+      dispatchSnackBar("Google sign-in failed", "error");
+      setIsLoading(false)
     }
   };
   return (

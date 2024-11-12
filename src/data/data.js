@@ -207,6 +207,19 @@ const orderManagmentDetails = [
     city: "New York",
   },
 ];
+const topSellingStockTitle = [
+  "Name",
+  "Sold Quantity",
+  "Remaining Quantity",
+  "Price",
+];
+const topSellingStockDetail = [
+  { name: "Surf Excel", sold_quantity: 30, rem_qty: 12, price: "$100" },
+  { name: "Surf Excel", sold_quantity: 30, rem_qty: 12, price: "$100" },
+  { name: "Surf Excel", sold_quantity: 30, rem_qty: 12, price: "$100" },
+  { name: "Surf Excel", sold_quantity: 30, rem_qty: 12, price: "$100" },
+  { name: "Surf Excel", sold_quantity: 30, rem_qty: 12, price: "$100" },
+];
 const productManagmentDetails = [
   {
     image: product,
@@ -306,7 +319,6 @@ const productManagmentDetails = [
   },
 ];
 
-
 export default {
   orderInfo,
   orderDetails,
@@ -314,4 +326,6 @@ export default {
   productManagmentDetails,
   orderManagmentTitle,
   orderManagmentDetails,
+  topSellingStockTitle,
+  topSellingStockDetail,
 };

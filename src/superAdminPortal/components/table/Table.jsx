@@ -21,21 +21,7 @@ import FilterListIcon from "@mui/icons-material/FilterList";
 import { visuallyHidden } from "@mui/utils";
 
 import data from "../../../data/data";
-import {
-  CheckCircleOutlineOutlined,
-  CheckOutlined,
-  ModeEdit,
-} from "@mui/icons-material";
-import SimpleDialogDemo from "../dialog/Dialog";
-import {
-  Dialog,
-  DialogTitle,
-  List,
-  ListItem,
-  ListItemAvatar,
-  ListItemButton,
-  ListItemText,
-} from "@mui/material";
+import { ModeEdit } from "@mui/icons-material";
 
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
@@ -55,65 +41,92 @@ function getComparator(order, orderBy) {
 
 const headCells = [
   {
-    id: "image",
+    id: "name",
     numeric: false,
     disablePadding: false,
-    label: "Image",
+    label: "Name",
   },
   {
-    id: "p_item",
-    numeric: false,
+    id: "sold_qty",
+    numeric: true,
     disablePadding: false,
-    label: "Product Item",
+    label: "Sold Quantity",
   },
   {
-    id: "p_id",
-    numeric: false,
+    id: "rem_qty",
+    numeric: true,
     disablePadding: false,
-    label: "Product ID",
-  },
-  {
-    id: "date",
-    numeric: false,
-    disablePadding: false,
-    label: "Date",
+    label: "Remaining Quantity",
   },
   {
     id: "price",
-    numeric: true,
+    numeric: false,
     disablePadding: false,
     label: "Price",
   },
-  {
-    id: "organization",
-    numeric: false,
-    disablePadding: false,
-    label: "Organization",
-  },
-  {
-    id: "quantity",
-    numeric: true,
-    disablePadding: false,
-    label: "Quantity",
-  },
-  {
-    id: "status",
-    numeric: false,
-    disablePadding: false,
-    label: "Status",
-  },
-  {
-    id: "actions",
-    numeric: false,
-    disablePadding: false,
-    label: "Actions",
-  },
 ];
+// const headCells = [
+//   {
+//     id: "image",
+//     numeric: false,
+//     disablePadding: false,
+//     label: "Image",
+//   },
+//   {
+//     id: "p_item",
+//     numeric: false,
+//     disablePadding: false,
+//     label: "Product Item",
+//   },
+//   {
+//     id: "p_id",
+//     numeric: false,
+//     disablePadding: false,
+//     label: "Product ID",
+//   },
+//   {
+//     id: "date",
+//     numeric: false,
+//     disablePadding: false,
+//     label: "Date",
+//   },
+//   {
+//     id: "price",
+//     numeric: true,
+//     disablePadding: false,
+//     label: "Price",
+//   },
+//   {
+//     id: "organization",
+//     numeric: false,
+//     disablePadding: false,
+//     label: "Organization",
+//   },
+//   {
+//     id: "quantity",
+//     numeric: true,
+//     disablePadding: false,
+//     label: "Quantity",
+//   },
+//   {
+//     id: "status",
+//     numeric: false,
+//     disablePadding: false,
+//     label: "Status",
+//   },
+//   {
+//     id: "actions",
+//     numeric: false,
+//     disablePadding: false,
+//     label: "Actions",
+//   },
+// ];
 
 function EnhancedTableHead(props) {
   const {
     onSelectAllClick,
     order,
+    tableHeading,
     orderBy,
     numSelected,
     rowCount,
@@ -166,11 +179,12 @@ EnhancedTableHead.propTypes = {
   onSelectAllClick: PropTypes.func.isRequired,
   order: PropTypes.oneOf(["asc", "desc"]).isRequired,
   orderBy: PropTypes.string.isRequired,
+  tableHeading: PropTypes.string,
   rowCount: PropTypes.number.isRequired,
 };
 
 function EnhancedTableToolbar(props) {
-  const { numSelected } = props;
+  const { numSelected, tableHeading } = props;
   return (
     <Toolbar
       sx={[
@@ -203,7 +217,7 @@ function EnhancedTableToolbar(props) {
           id="tableTitle"
           component="div"
         >
-          Inventory
+          Top Selling Stock
         </Typography>
       )}
       {numSelected > 0 ? (
@@ -214,7 +228,7 @@ function EnhancedTableToolbar(props) {
         </Tooltip>
       ) : (
         <Tooltip title="Filter list">
-          <IconButton onClick={props.openDialog}>
+          <IconButton>
             <FilterListIcon />
           </IconButton>
         </Tooltip>
@@ -227,7 +241,7 @@ EnhancedTableToolbar.propTypes = {
   numSelected: PropTypes.number.isRequired,
 };
 
-export default function EnhancedTable() {
+export default function EnhancedTable({ width }) {
   const [order, setOrder] = React.useState("asc");
   const [orderBy, setOrderBy] = React.useState("price");
   const [selected, setSelected] = React.useState([]);
@@ -238,29 +252,15 @@ export default function EnhancedTable() {
   const [selectedRow, setSelectedRow] = React.useState();
   const [editedRow, setEditedRow] = React.useState(null);
 
-  const [filterOrganization, setFilterOrganization] = React.useState("");
-  const [filterDate, setFilterDate] = React.useState("");
-  const [filterPrice, setFilterPrice] = React.useState("");
-  const [open, setOpen] = React.useState(false);
+  const [dialogOpen, setDialogOpen] = React.useState(false);
 
-  const HandlOpenDialog = () => {
-    <Dialog onClose={handleClose} open={open}>
-      <DialogTitle>Set backup account</DialogTitle>
-      <List sx={{ pt: 0 }}>
-        {filterOrganization.map((email) => (
-          <ListItem disableGutters key={email}>
-            <ListItemButton
-              onClick={() => handleListItemClick(email)}
-            ></ListItemButton>
-          </ListItem>
-        ))}
-        {/* <ListItem disableGutters></ListItem> */}
-      </List>
-    </Dialog>;
+  const handleOpenDialog = () => {
+    setDialogOpen(true);
   };
 
-  const handleClose = () => {
-    setOpen(false);
+  // Function to close the dialog
+  const handleCloseDialog = () => {
+    setDialogOpen(false);
   };
 
   const handleRequestSort = (event, property) => {
@@ -309,15 +309,7 @@ export default function EnhancedTable() {
   const handleChangeDense = (event) => {
     setDense(event.target.checked);
   };
-  const filteredRows = data.productManagmentDetails.filter((row) => {
-    const matchesOrganization =
-      !filterOrganization || row.prod_organization.includes(filterOrganization);
-    const matchesDate = !filterDate || row.prod_date.includes(filterDate);
-    const matchesPrice =
-      !filterPrice || row.prod_price.toString().includes(filterPrice);
 
-    return matchesOrganization && matchesDate && matchesPrice;
-  });
   // Avoid a layout jump when reaching the last page with empty rows.
   const emptyRows =
     page > 0
@@ -327,21 +319,40 @@ export default function EnhancedTable() {
         )
       : 0;
 
-  const stableSort = (array, compare) => {
+  function stableSort(array, compare) {
     const indexedArray = array.map((value, index) => ({ value, index }));
+
     indexedArray.sort((a, b) => {
       const comparison = compare(a.value, b.value);
       if (comparison === 0) {
+        // If values are equal, maintain the original order by comparing their indices
         return a.index - b.index;
       }
       return comparison;
     });
+
     return indexedArray.map((item) => item.value);
-  };
+  }
 
   const visibleRows = React.useMemo(() => {
-    return stableSort(filteredRows, getComparator(order, orderBy));
-  }, [filteredRows, order, orderBy]);
+    if (orderBy && Array.isArray(orderBy)) {
+      const compare = (a, b) => {
+        for (let field of orderBy) {
+          if (a[field] < b[field]) {
+            return order === "desc" ? 1 : -1;
+          }
+          if (a[field] > b[field]) {
+            return order === "desc" ? -1 : 1;
+          }
+        }
+        return 0;
+      };
+
+      return stableSort(data.productManagmentDetails, compare);
+    }
+
+    return data.productManagmentDetails;
+  }, [data.productManagmentDetails, order, orderBy]);
 
   const HandleEditClick = (index, row) => {
     console.log(index);
@@ -354,12 +365,9 @@ export default function EnhancedTable() {
     setIsEdit(false);
   };
   return (
-    <Box sx={{ width: "100%" }}>
+    <Box sx={{ width: width || "100%", marginTop: "20px" }}>
       <Paper sx={{ width: "100%", mb: 2 }}>
-        <EnhancedTableToolbar
-          numSelected={selected.length}
-          openDialog={HandlOpenDialog}
-        />
+        <EnhancedTableToolbar numSelected={selected.length} />
         <TableContainer>
           <Table
             sx={{ minWidth: 750 }}
@@ -394,15 +402,15 @@ export default function EnhancedTable() {
                       sx={{ cursor: "pointer", padding: "none" }}
                     >
                       <TableCell key={row.prod_id} padding="checkbox">
-                        <Checkbox
+                        {/* <Checkbox
                           color="primary"
                           checked={isItemSelected}
                           inputProps={{
                             "aria-labelledby": labelId,
                           }}
-                        />
+                        /> */}
                       </TableCell>
-                      <TableCell>
+                      {/* <TableCell>
                         <img
                           src={row.image}
                           alt="Product Image"
@@ -413,7 +421,7 @@ export default function EnhancedTable() {
                             borderRadius: "5px",
                           }}
                         />
-                      </TableCell>
+                      </TableCell> */}
                       <TableCell align="left">
                         {isEditable ? (
                           <input
@@ -464,7 +472,7 @@ export default function EnhancedTable() {
                           row.price
                         )}
                       </TableCell>
-                      <TableCell align="left">
+                      {/* <TableCell align="left">
                         {isEditable ? (
                           <input
                             type="text"
@@ -479,8 +487,8 @@ export default function EnhancedTable() {
                         ) : (
                           row.organization
                         )}
-                      </TableCell>
-                      <TableCell align="left">
+                      </TableCell> */}
+                      {/* <TableCell align="left">
                         {isEditable ? (
                           <input
                             type="number"
@@ -495,8 +503,8 @@ export default function EnhancedTable() {
                         ) : (
                           row.qty
                         )}
-                      </TableCell>
-                      <TableCell align="left">{row.status}</TableCell>
+                      </TableCell> */}
+                      {/* <TableCell align="left">{row.status}</TableCell>
                       <TableCell align="left">
                         {isEdit && selectedRow === index ? (
                           <CheckOutlined
@@ -507,7 +515,7 @@ export default function EnhancedTable() {
                             onClick={() => HandleEditClick(index, row)}
                           />
                         )}
-                      </TableCell>
+                      </TableCell> */}
                     </TableRow>
                   );
                 })}
