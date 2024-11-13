@@ -1,11 +1,11 @@
 import "../banner/banner.css";
-import Button from "../Button/Button";
+import SupportBanner from "../supportBanner/SupportBanner";
 const Banner = () => {
   return (
     <div className="banner">
-      <div className="shopnow-btn">
-        <Button title="SHOPNOW" />
-      </div>
+      <section className="supportBanner">
+        <SupportBanner />
+      </section>
     </div>
   );
 };

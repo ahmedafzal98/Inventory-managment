@@ -1,0 +1,44 @@
+@font-face {
+  font-family: "Nunito-extra-bold";
+  src: url("../../fonts/Nunito/static/Nunito-ExtraBold.ttf");
+}
+@font-face {
+  font-family: "Nunito-regular";
+  src: url("../../fonts/Nunito/static/Nunito-Regular.ttf");
+}
+.workBanner {
+  background-image: url("https://bradmartin.fzhpsolutions.com/wp-content/uploads/2024/10/Group-92.png");
+  margin-top: 30px;
+  position: relative;
+  height: 535px;
+  background-size: cover;
+  background-position: center;
+}
+
+.question {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+}
+.points {
+    line-height: 1.9;
+  display: flex;
+  flex-direction: column;
+}
+.points span {
+  font-family: "Nunito-regular";
+  font-size: 20px;
+}
+.question span {
+    line-height: 1.9;
+  color: white; /* Adjust color for visibility */
+  font-size: 20px;
+}
+.question .question-text{
+    font-size: 34px;
+    font-family: "Nunito-extra-bold";
+}

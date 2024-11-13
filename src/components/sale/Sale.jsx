@@ -1,8 +1,9 @@
 import "../../components/sale/Sale.css";
-const Sale = () => {
+const Sale = ({ title }) => {
   return (
-    <div className="sale-container">
+    <div style={{ display: "flex", flexDirection: "column" }}>
       <div className="sale-banner"></div>
+      <span className="productName">{title}</span>
     </div>
   );
 };

@@ -1,7 +1,11 @@
+@font-face {
+    font-family: "Nunito-extra-bold";
+    src: url("../../fonts/Nunito/static/Nunito-ExtraBold.ttf");
+}
 
-.headline{
+.headline span{
+    font-size: 40px;
     text-align: center;
-    font-family: 'Nunito';
+    font-family: 'Nunito-extra-bold';
     color: #B700FF;
-    font-size: 50px;
 }

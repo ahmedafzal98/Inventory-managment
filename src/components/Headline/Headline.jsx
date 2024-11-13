@@ -1,8 +1,8 @@
 import "../Headline/Headline.css";
-const Headline = (props) => {
+const Headline = ({ text }) => {
   return (
     <div className="headline">
-      <span>{props.title}</span>
+      <span>{text}</span>
     </div>
   );
 };

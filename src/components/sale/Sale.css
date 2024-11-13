@@ -1,17 +1,13 @@
 .sale-container {
-    width: 100%; 
-    height: 387px;
-    margin-top: 40px;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
+  width: 80%;
+  border-radius: 20px;
 }
 
 .sale-banner {
-    background-image: url('../../images/sale-banner.png');
-    background-size: contain; 
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;  
-    height: 100%; 
+  background-image: url("https://bradmartin.fzhpsolutions.com/wp-content/uploads/2024/10/Rectangle-39.png");
+  border-radius: 20px;
+  margin: 10px;
+  background-repeat: no-repeat;
+  width: 480px;
+  height: 511px;
 }

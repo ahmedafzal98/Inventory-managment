@@ -4,6 +4,7 @@ import Fundraising from "../components/fundraisingBanner/Fundraising";
 import Navigation from "../components/navigation/Navigation";
 import Partners from "../components/partners/Partners";
 import SellingFireworks from "../components/sellingFireworks/SellingFireworks";
+import WorkBanner from "../components/worksBanner/WorkBanner";
 
 const Home = () => {
   return (
@@ -12,11 +13,13 @@ const Home = () => {
 
       <main style={{ backgroundColor: "#D8F7FF" }}>
         <Banner />
+        {/* <SupportBanner /> */}
         <Partners />
         <Fundraising />
         <SellingFireworks />
         {/* <Products /> */}
-        <Footer />
+        <WorkBanner />
+        {/* <Footer /> */}
       </main>
     </>
   );

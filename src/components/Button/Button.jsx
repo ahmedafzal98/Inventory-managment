@@ -1,8 +1,10 @@
 import "./Button.css";
-const Button = (props) => {
+const Button = ({ height: height, width, title, marginTop }) => {
   return (
-    <div className="button">
-      <button>{props.title}</button>
+    <div style={{}} className="button">
+      <button style={{ marginTop: marginTop, height: height, width: width }}>
+        {title}
+      </button>
     </div>
   );
 };

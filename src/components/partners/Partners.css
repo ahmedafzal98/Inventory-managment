@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 5%;
+    margin-top: 30px;
 }
 .partner-logos{
     margin-top: 20px;
@@ -12,7 +12,4 @@
     justify-content: space-around;
     align-items: center;
     width: 70%;
-}
-.partner-logos img{
-    width: 229px;
 }

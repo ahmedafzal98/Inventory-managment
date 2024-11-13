@@ -12,6 +12,7 @@ import Login from "../components/login/Login";
 import { useEffect, useState } from "react";
 import ProductManagment from "../components/productManagment/ProductManagment";
 import Sales from "../components/sales/Sales";
+import Home from "../../Pages/Home";
 
 const MainRoute = () => {
   const [navText, setNavText] = useState("Dashboard"); // Default navbar text
@@ -60,7 +61,10 @@ const MainRoute = () => {
 
   return (
     <>
-      <Navbar navText={navText} />
+      <Routes>
+        <Route path="/customer/home" element={<Home />} />
+      </Routes>
+      {/* <Navbar navText={navText} />
       <div className="main-content">
         <Sidebar />
         <Routes>
@@ -83,7 +87,7 @@ const MainRoute = () => {
           <Route path="/inventory/price" element={<Price />} />
           <Route path="/sales" element={<Sales />} />
         </Routes>
-      </div>
+      </div> */}
     </>
   );
 };
