@@ -61,10 +61,10 @@ const MainRoute = () => {
 
   return (
     <>
-      <Routes>
+      {/* <Routes>
         <Route path="/customer/home" element={<Home />} />
-      </Routes>
-      {/* <Navbar navText={navText} />
+      </Routes> */}
+      <Navbar navText={navText} />
       <div className="main-content">
         <Sidebar />
         <Routes>
@@ -87,7 +87,7 @@ const MainRoute = () => {
           <Route path="/inventory/price" element={<Price />} />
           <Route path="/sales" element={<Sales />} />
         </Routes>
-      </div> */}
+      </div>
     </>
   );
 };

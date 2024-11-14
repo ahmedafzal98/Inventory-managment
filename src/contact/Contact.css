@@ -1,0 +1,77 @@
+@font-face {
+    font-family: 'Nunito-bold';
+    src: url('../fonts/Nunito/static/Nunito-Bold.ttf');
+}
+@font-face {
+    font-family: 'Nunito-regular';
+    src: url('../fonts/Nunito/static/Nunito-Regular.ttf');
+}
+.contact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+.contactContainer{
+    display: flex;
+    width: 80%;
+}
+.contactLocation{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+}
+.contactForm{
+    width: 50%;
+
+}
+.locationContent{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.address{
+    color: #000;
+font-family: 'Nunito-bold';
+font-size: 20px;
+margin-top: 20px;
+}
+.addressContent{
+    color: #5C5C5C;
+font-family: 'Nunito-regular';
+font-size: 16px;
+}
+.locationSocialIcons{
+    margin-top: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.blackRoundCircle{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    margin:3px;
+    background-color: #000;
+    border-radius: 50%;
+}
+.contactFormContainer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.contactFormContainer .inputText{
+    margin-top: 20px;
+    border-radius: 6px;
+    padding-left: 20px;
+    border: 2px solid #B9B9B9;
+    font-size: 19px;
+    color: #B9B9B9;
+    height: 70px;
+    width: 580px;
+}

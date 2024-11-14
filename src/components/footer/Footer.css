@@ -2,179 +2,121 @@
     font-family: 'Nunito-light';
         src: url('../../fonts/Nunito/static/Nunito-Light.ttf');
   }
- /* Footer styles */
+@font-face {
+    font-family: 'Nunito-medium';
+        src: url('../../fonts/Nunito/static/Nunito-Medium.ttf');
+  }
+@font-face {
+    font-family: 'Nunito-bold';
+        src: url('../../fonts/Nunito/static/Nunito-Bold.ttf');
+  }
+ /* Footer sty
+ les */
  .footer {
-    background-image: url('../../images/footer.png');
-    background-size: cover; /* Ensures the entire image is shown without cutting */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents repeating */
-    width: 100%;
-    height: 570px; /* Fixed height for the footer */
+    flex-direction: column;
     display: flex;
     justify-content: center;
     align-items: center;
+    
+    background-color: #002C5D;
+    width: 100%;
+    height: 570px; 
     margin-top: 40px;
-    position: relative;
-    overflow: hidden; /* Prevents overflow */
 }
 
-
-/* Footer menu */
-.footer-menu {
+.footer-container{
+    margin-top: 50px;
     display: flex;
-    justify-content: space-around;
-    width: 70%;
-    margin: auto;
-}
-
-/* Signup section */
-.signup-container {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 5%;
-    margin-top: 20px;
-}
-
-.signup {
-    overflow: hidden;
-    display: flex;
-    color: #fff;
-    margin-right: 13%;
-    height: auto;
-}
-
-.signup-offer {
-    display: flex;
-    flex-direction: column;
-}
-
-.signup-heading {
-    font-family: 'Nunito';
-    font-size: 24px;
-}
-
-.signup-detail {
-    margin-top: 20px;
-    display: flex;
-    font-family: 'Nunito-light';
-    font-size: 14px;
-}
-
-.vr {
-    height: 100%;
-    width: 1px;
-    margin-left: 20px;
-    background-color: #fff;
-}
-
-/* Footer content layout */
-.footer-container {
-    width: 100%;
-    display: flex;
-    margin-top: 10%;
-    flex-direction: column;
-}
-
-.footer-logo-section {
-    width: 40%;
-    display: flex;
-    flex-direction: column;
     justify-content: space-between;
-    height: 300px;
+    width: 80%;
+    height: 60%;
+    margin-bottom: 4%;
 }
-
-.footer-container .footer-logo span {
-    font-size: 30px;
-}
-
-.query, .address, .mobile {
-    color: #fff;
-    line-height: 1.8;
-}
-
-.address, .mobile {
+.addressDetail{
     display: flex;
-}
-
-.address span, .mobile span {
-    margin-left: 10px;
-}
-
-.socialIcons {
-    display: flex;
-}
-
-.round-circle {
-    margin: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 38px;
-    height: 38px;
-    background-color: #fff;
-    border-radius: 50%;
-}
-.up-arrow{
-    position: absolute;
-    margin-left: 70%;
-    margin-top: 30px;
-}
-
-/* Footer details */
-.footer-details {
-    display: flex;
-    width: 100%;
+    flex-direction: column;
     justify-content: space-evenly;
+    height: 100%;
+    width: 12%;
+}
+.addressLocation{
+    color: #fff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.footer-corporate, .customer-service, .footer-products {
+.addressLocation span{
+font-family: 'Nunito-medium';
+font-size: 16px;    
+}
+.signinUpdates{
+    height: 50%;
     display: flex;
     flex-direction: column;
+}
+.addressDetail img{
+    width: 100px;
+    height: 100px;
+}
+.socialIconsFooter{
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+.whiteRoundCircle{
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    width: 40px;
+    height: 40px;
+}
+.quickLinks{
     color: #fff;
-    font-size: 18px;
-    margin-top: 15px;
+    height: 70%;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+}
+.quickLinks .title{
+    font-family: 'Nunito-bold';
+    font-size: 22px;
+}
+.quickLinks .content{
+    font-family: 'Nunito-medium';
+    font-size: 16px;
+}
+.signinInput{
+    height: 50px;
+    padding-left: 20px;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #B700FF;
+    border: 1px solid #fff;
+    border-radius: 5px;
+}
+.signinBtn{
+    height: 47px;
+    width: 50%;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    color: #B700FF;
 }
 
-.footer-corporate li, .customer-service li, .footer-products li {
-    margin-top: 15px;
+.footerBottom{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.footerBottom span{
+    color: #fff;
     font-size: 15px;
-    font-family: 'Nunito-light';
+    
+    font-family: 'Nunito-bold';
 }
 
-/* Footer bottom */
-.footer-bottom {
-    height: auto;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 9%;
-    align-items: center;
-    width: 100%;
-}
-
-.hr {
-    height: 1px;
-    margin-top: 10px;
-    background-color: #3B3C3E;
-    width: 100%;
-}
-
-.footer-bottom-content {
-    width: 70%;
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-}
-
-.footer-bottom .designer {
-    width: 50%;
-    color: #fff;
-    font-family: 'Nunito-light';
-    font-size: 12px;
-}
-
-.footer-bottom .payment-cards {
-    display: flex;
-    justify-content: center;
-    width: 50%;
-}

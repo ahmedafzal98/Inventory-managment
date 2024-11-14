@@ -46,6 +46,11 @@
     height: 50px;
 }
 
+.nav-items :hover{
+    color: #B700FF;
+    transition: 0.5s ease;
+}
+
 /* .nav-icons {
     display: flex;
     gap: 5px; 
