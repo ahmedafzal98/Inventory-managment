@@ -7,7 +7,12 @@ import purchaseIcon from "../../../assets/purchaseIcon.svg";
 import cancelIcon from "../../../assets/cancelIcon.svg";
 import EnhancedTable from "../table/Table";
 
+import { lastOrdersColumns } from "../../../data/data";
+import { selectLastOrders } from "../../../store/DataSlice";
+import { useSelector } from "react-redux";
+
 const Sales = () => {
+  const orders = useSelector(selectLastOrders);
   const salesOverview = [
     {
       price: "$832",
@@ -75,7 +80,11 @@ const Sales = () => {
         productOverview={productOverview}
       />
 
-      <EnhancedTable width="90%" tableHeading="Top Selling Stock" />
+      <EnhancedTable
+        tableData={orders}
+        columns={lastOrdersColumns}
+        width="90%"
+      />
     </div>
   );
 };

@@ -2,10 +2,6 @@ import home from "../../../assets/home.svg";
 import reports from "../../../assets/reports.svg";
 import orders from "../../../assets/orders.svg";
 import tracking from "../../../assets/tracking.svg";
-import message from "../../../assets/message.svg";
-import delievery from "../../../assets/delievery.svg";
-import wallet from "../../../assets/wallet.svg";
-import settings from "../../../assets/settings.svg";
 import { Link, useLocation } from "react-router-dom";
 
 import "./Menu.css";

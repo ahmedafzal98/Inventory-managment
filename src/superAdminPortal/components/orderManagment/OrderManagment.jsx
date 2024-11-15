@@ -1,16 +1,19 @@
 import "../viewStock/ViewStock.css";
 import "./OrderManagment.css";
 
-import data from "../../../data/data";
-import SelectMenu from "../selectMenu/SelectMenu";
+
+import { lastOrdersColumns } from "../../../data/data";
+import { selectLastOrders } from "../../../store/DataSlice";
+import { useSelector } from "react-redux";
 import CardContainer from "../cardContainer/CardContainer";
 import EnhancedTable from "../table/Table";
 const OrderManagment = () => {
+  const orders = useSelector(selectLastOrders);
   return (
     <div className="stock">
       <CardContainer />
       <div className="stock-card">
-        <EnhancedTable />
+        <EnhancedTable tableData={orders} columns={lastOrdersColumns} />
         {/* <div className="orderManagment-items">
           {data.orderManagmentDetails &&
             data.orderManagmentDetails.map((detail) => {

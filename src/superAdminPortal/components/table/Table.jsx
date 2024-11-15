@@ -124,6 +124,7 @@ const headCells = [
 
 function EnhancedTableHead(props) {
   const {
+    columns,
     onSelectAllClick,
     order,
     tableHeading,
@@ -150,17 +151,17 @@ function EnhancedTableHead(props) {
             }}
           />
         </TableCell>
-        {headCells.map((headCell) => (
+        {columns.map((column) => (
           <TableCell>
             <TableSortLabel
-              active={orderBy === headCell.id}
-              direction={orderBy === headCell.id ? order : "asc"}
-              onClick={createSortHandler(headCell.id)}
+              active={orderBy === column.id}
+              direction={orderBy === column.id ? order : "asc"}
+              onClick={createSortHandler(column.id)}
             >
               <Typography variant="body2" fontSize="18px" fontWeight={700}>
-                {headCell.label}
+                {column.label}
               </Typography>
-              {orderBy === headCell.id ? (
+              {orderBy === column.id ? (
                 <Box component="span" sx={visuallyHidden}>
                   {order === "desc" ? "sorted descending" : "sorted ascending"}
                 </Box>
@@ -241,7 +242,12 @@ EnhancedTableToolbar.propTypes = {
   numSelected: PropTypes.number.isRequired,
 };
 
-export default function EnhancedTable({ width }) {
+export default function EnhancedTable({
+  tableData,
+  columns,
+  isOrderPage = false,
+  width,
+}) {
   const [order, setOrder] = React.useState("asc");
   const [orderBy, setOrderBy] = React.useState("price");
   const [selected, setSelected] = React.useState([]);
@@ -348,11 +354,11 @@ export default function EnhancedTable({ width }) {
         return 0;
       };
 
-      return stableSort(data.productManagmentDetails, compare);
+      return stableSort(tableData, compare);
     }
 
-    return data.productManagmentDetails;
-  }, [data.productManagmentDetails, order, orderBy]);
+    return tableData;
+  }, [tableData, order, orderBy]);
 
   const HandleEditClick = (index, row) => {
     console.log(index);
@@ -364,6 +370,9 @@ export default function EnhancedTable({ width }) {
   const HandleSaveIcon = (index, updatedRow) => {
     setIsEdit(false);
   };
+  console.log(tableData);
+  console.log(columns);
+
   return (
     <Box sx={{ width: width || "100%", marginTop: "20px" }}>
       <Paper sx={{ width: "100%", mb: 2 }}>
@@ -375,16 +384,17 @@ export default function EnhancedTable({ width }) {
             size={dense ? "small" : "medium"}
           >
             <EnhancedTableHead
+              columns={columns}
               numSelected={selected.length}
               order={order}
               orderBy={orderBy}
               onSelectAllClick={handleSelectAllClick}
               onRequestSort={handleRequestSort}
-              rowCount={data.productManagmentDetails.length}
+              rowCount={tableData.length}
             />
             <TableBody>
-              {visibleRows &&
-                visibleRows.map((row, index) => {
+              {tableData &&
+                tableData.map((row, index) => {
                   const isItemSelected = selected.includes(row.prod_id);
                   const labelId = `enhanced-table-checkbox-${index}`;
 
@@ -402,26 +412,15 @@ export default function EnhancedTable({ width }) {
                       sx={{ cursor: "pointer", padding: "none" }}
                     >
                       <TableCell key={row.prod_id} padding="checkbox">
-                        {/* <Checkbox
+                        <Checkbox
                           color="primary"
                           checked={isItemSelected}
                           inputProps={{
                             "aria-labelledby": labelId,
                           }}
-                        /> */}
-                      </TableCell>
-                      {/* <TableCell>
-                        <img
-                          src={row.image}
-                          alt="Product Image"
-                          style={{
-                            width: "40px", // Adjust width as needed
-                            height: "40px", // Adjust height as needed
-                            objectFit: "cover",
-                            borderRadius: "5px",
-                          }}
                         />
-                      </TableCell> */}
+                      </TableCell>
+
                       <TableCell align="left">
                         {isEditable ? (
                           <input
@@ -435,11 +434,11 @@ export default function EnhancedTable({ width }) {
                             value={editedRow?.name || ""}
                           />
                         ) : (
-                          row.name
+                          row.id
                         )}
                       </TableCell>
 
-                      <TableCell align="left">{row.prod_id}</TableCell>
+                      <TableCell align="left">{row.orderId}</TableCell>
                       <TableCell align="left">
                         {isEditable ? (
                           <input
@@ -453,7 +452,7 @@ export default function EnhancedTable({ width }) {
                             value={editedRow?.date || ""}
                           />
                         ) : (
-                          row.date
+                          row.productName
                         )}
                       </TableCell>
                       <TableCell align="left">
@@ -469,10 +468,10 @@ export default function EnhancedTable({ width }) {
                             value={editedRow?.price || 0}
                           />
                         ) : (
-                          row.price
+                          row.customerName
                         )}
                       </TableCell>
-                      {/* <TableCell align="left">
+                      <TableCell align="left">
                         {isEditable ? (
                           <input
                             type="text"
@@ -485,10 +484,10 @@ export default function EnhancedTable({ width }) {
                             value={editedRow?.organization || ""}
                           />
                         ) : (
-                          row.organization
+                          row.email
                         )}
-                      </TableCell> */}
-                      {/* <TableCell align="left">
+                      </TableCell>
+                      <TableCell align="left">
                         {isEditable ? (
                           <input
                             type="number"
@@ -501,9 +500,74 @@ export default function EnhancedTable({ width }) {
                             value={editedRow?.qty || 0}
                           />
                         ) : (
-                          row.qty
+                          row.phone
                         )}
-                      </TableCell> */}
+                      </TableCell>
+                      <TableCell align="left">
+                        {isEditable ? (
+                          <input
+                            type="number"
+                            onChange={(e) =>
+                              setEditedRow({
+                                ...editedRow,
+                                qty: e.target.value,
+                              })
+                            }
+                            value={editedRow?.qty || 0}
+                          />
+                        ) : (
+                          row.quantity
+                        )}
+                      </TableCell>
+                      <TableCell align="left">
+                        {isEditable ? (
+                          <input
+                            type="number"
+                            onChange={(e) =>
+                              setEditedRow({
+                                ...editedRow,
+                                qty: e.target.value,
+                              })
+                            }
+                            value={editedRow?.qty || 0}
+                          />
+                        ) : (
+                          row.price
+                        )}
+                      </TableCell>
+                      <TableCell align="left">
+                        {isEditable ? (
+                          <input
+                            type="number"
+                            onChange={(e) =>
+                              setEditedRow({
+                                ...editedRow,
+                                qty: e.target.value,
+                              })
+                            }
+                            value={editedRow?.qty || 0}
+                          />
+                        ) : (
+                          row.orderDate
+                        )}
+                      </TableCell>
+                      <TableCell align="left">
+                        {isEditable ? (
+                          <input
+                            type="number"
+                            onChange={(e) =>
+                              setEditedRow({
+                                ...editedRow,
+                                qty: e.target.value,
+                              })
+                            }
+                            value={editedRow?.qty || 0}
+                          />
+                        ) : (
+                          row.status
+                        )}
+                      </TableCell>
+
                       {/* <TableCell align="left">{row.status}</TableCell>
                       <TableCell align="left">
                         {isEdit && selectedRow === index ? (
@@ -534,7 +598,7 @@ export default function EnhancedTable({ width }) {
         <TablePagination
           rowsPerPageOptions={[5, 10, 25]}
           component="div"
-          count={data.productManagmentDetails.length}
+          count={tableData.length}
           rowsPerPage={rowsPerPage}
           page={page}
           onPageChange={handleChangePage}

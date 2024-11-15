@@ -1,13 +1,17 @@
 import "./RecentOrder.css";
 import Table from "../table/Table";
-import data from "../../../data/data";
+import { lastOrdersColumns } from "../../../data/data";
+import { selectLastOrders } from "../../../store/DataSlice";
+import { useSelector } from "react-redux";
 const RecentOrders = () => {
+  const lastOrders = useSelector(selectLastOrders);
+
   return (
     <section className="orders">
       <div className="heading">
         <span>Recent Orders</span>
       </div>
-      <Table titles={data.orderInfo} info={data.orderDetails} />
+      <Table tableData={lastOrders} columns={lastOrdersColumns} />
     </section>
   );
 };
