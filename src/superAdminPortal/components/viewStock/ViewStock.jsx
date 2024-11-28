@@ -2,7 +2,7 @@ import "./ViewStock.css";
 import Pagination from "../pagination/pagination.jsx";
 import EnhancedTable from "../table/Table.jsx";
 import { lastOrdersColumns } from "../../../data/data";
-import { selectLastOrders } from "../../../store/DataSlice";
+import { selectLastOrders, selectProducts } from "../../../store/DataSlice";
 import { useSelector } from "react-redux";
 
 const ViewStock = () => {

@@ -94,7 +94,7 @@ const orderDetails = [
   },
 ];
 
-const productManagmentTitle = [
+export const productManagmentTitle = [
   "IMAGE",
   "PRODUCT ITEM",
   "PRODUCT ID",
@@ -590,7 +590,6 @@ export const lastOrdersColumns = [
 
 export default {
   orderDetails,
-  productManagmentTitle,
   orderManagmentTitle,
   topSellingStockTitle,
   topSellingStockDetail,

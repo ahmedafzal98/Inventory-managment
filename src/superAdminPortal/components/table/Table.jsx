@@ -151,24 +151,28 @@ function EnhancedTableHead(props) {
             }}
           />
         </TableCell>
-        {columns.map((column) => (
-          <TableCell>
-            <TableSortLabel
-              active={orderBy === column.id}
-              direction={orderBy === column.id ? order : "asc"}
-              onClick={createSortHandler(column.id)}
-            >
-              <Typography variant="body2" fontSize="18px" fontWeight={700}>
-                {column.label}
-              </Typography>
-              {orderBy === column.id ? (
-                <Box component="span" sx={visuallyHidden}>
-                  {order === "desc" ? "sorted descending" : "sorted ascending"}
-                </Box>
-              ) : null}
-            </TableSortLabel>
-          </TableCell>
-        ))}
+        {columns &&
+          columns.map((column) => (
+            <TableCell>
+              <TableSortLabel
+                active={orderBy === column.id}
+                direction={orderBy === column.id ? order : "asc"}
+                onClick={createSortHandler(column.id)}
+              >
+                <Typography variant="body2" fontSize="18px" fontWeight={700}>
+                  {column.label}
+                  {console.log(column)}
+                </Typography>
+                {orderBy === column.id ? (
+                  <Box component="span" sx={visuallyHidden}>
+                    {order === "desc"
+                      ? "sorted descending"
+                      : "sorted ascending"}
+                  </Box>
+                ) : null}
+              </TableSortLabel>
+            </TableCell>
+          ))}
       </TableRow>
     </TableHead>
   );
@@ -370,8 +374,6 @@ export default function EnhancedTable({
   const HandleSaveIcon = (index, updatedRow) => {
     setIsEdit(false);
   };
-  console.log(tableData);
-  console.log(columns);
 
   return (
     <Box sx={{ width: width || "100%", marginTop: "20px" }}>
@@ -397,6 +399,8 @@ export default function EnhancedTable({
                 tableData.map((row, index) => {
                   const isItemSelected = selected.includes(row.prod_id);
                   const labelId = `enhanced-table-checkbox-${index}`;
+
+                  console.log(tableData);
 
                   const isEditable = selectedRow === index && isEdit;
 
@@ -567,19 +571,6 @@ export default function EnhancedTable({
                           row.status
                         )}
                       </TableCell>
-
-                      {/* <TableCell align="left">{row.status}</TableCell>
-                      <TableCell align="left">
-                        {isEdit && selectedRow === index ? (
-                          <CheckOutlined
-                            onClick={() => HandleSaveIcon(index, row)}
-                          />
-                        ) : (
-                          <ModeEdit
-                            onClick={() => HandleEditClick(index, row)}
-                          />
-                        )}
-                      </TableCell> */}
                     </TableRow>
                   );
                 })}
